@@ -1,7 +1,8 @@
 @import "alliance-bold.css";
 @import "alliance-semibold.css";
 @import "alliance-regular.css";
-@import "generisch.css";
+@import "generisch-semibold.css";
+@import "generisch-regular.css";
   
 
 h1, h2, h3 {
@@ -17,7 +18,7 @@ p {
 }
 
 h6 {
-  font-family: "Generisch" !important;
+  font-family: "Generisch-Regular" !important;
   opacity: 0.5;
 }
 
@@ -33,5 +34,5 @@ a {
 
 a:hover {
   opacity: 0.5;
-  colot: inherit;
+  color: inherit;
 }
