@@ -1,0 +1,27 @@
+/*
+Font: 		Generisch Mono
+Style: 		SemiBold
+URL: 		https://www.youworkforthem.com/font/T11632/generisch-mono
+Foundry: 	Akufadhl
+Foundry: 	https://www.youworkforthem.com/designer/685/akufadhl
+Copyright:	Copyright © 2019 by Akufadhl. All rights reserved.
+Version: 	17
+Created:	December 05, 2019
+License: 	https://www.youworkforthem.com/font-license 
+License: 	The WebFont(s) listed in this document must follow the YouWorkForThem
+			WebFont license rules. All other parties are strictly restricted 
+			from using the WebFonts(s) listed without a purchased license. 
+			All details above must always remain unaltered and visible in your CSS.
+*/
+
+@font-face {
+	font-family: 'GenerischMono-SemiBold';
+	src: url('generisch-mono-semibold.eot');
+	src: url('generisch-mono-semibold.eot?#iefix') format('embedded-opentype'),
+             url('generisch-mono-semibold.woff2') format('woff2'),
+	     url('generisch-mono-semibold.woff') format('woff'),
+	     url('generisch-mono-semibold.ttf') format('truetype'),
+	     url('generisch-mono-semibold.svg#youworkforthem') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
