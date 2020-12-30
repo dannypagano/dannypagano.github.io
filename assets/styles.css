@@ -1,20 +1,25 @@
-@import "alliance-bold.css";
 @import "alliance-semibold.css";
+@import "alliance-light.css";
 @import "alliance-regular.css";
-@import "generisch-semibold.css";
 @import "generisch-regular.css";
   
+body {
+  background-color: black ;
+  color: white ;
+  font-family: "Alliance-Light"
+}
 
-h1, h2, h3 {
+h1, h2, h3, h4{
     font-family: "Alliance-SemiBold";
 }
 
-h4, h5 {
-  font-family: "Alliance-Regular";
+h5 {
+  font-family: "Alliance-Light";
+  line-height: 1.7rem;
 }
 
-p {
-  font-family: "Alliance-Regular";
+p a {
+  font-family: "Alliance-Light";
 }
 
 h6 {
@@ -22,10 +27,6 @@ h6 {
   opacity: 0.5;
 }
 
-body {
-  background-color: black ;
-  color: white ;
-}
 
 a {
   text-decoration: none;
@@ -35,4 +36,16 @@ a {
 a:hover {
   opacity: 0.8;
   color: inherit;
+}
+
+nav a {
+  font-size: 1.5rem;
+}
+
+nav a:nth-child(2) {
+    padding-left: 1rem;
+}
+
+.work-grid p {
+  font-family: "Alliance-Regular";
 }
