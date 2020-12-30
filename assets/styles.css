@@ -23,8 +23,8 @@ h6 {
 }
 
 body {
-  background-color: black !important;
-  color: white !important;
+  background-color: black ;
+  color: white ;
 }
 
 a {
@@ -33,6 +33,6 @@ a {
 }
 
 a:hover {
-  opacity: 0.5;
+  opacity: 0.8;
   color: inherit;
 }
