@@ -18,6 +18,11 @@ h5 {
   line-height: 1.7rem;
 }
 
+.about h5 {
+  font-size: 1.5rem;
+  line-height: 1.9rem;
+}
+
 p a {
   font-family: "Alliance-Light";
 }
@@ -48,4 +53,27 @@ nav a:nth-child(2) {
 
 .work-grid p {
   font-family: "Alliance-Regular";
+}
+
+.light {
+  background-color: white ;
+  color: black ;
+}
+
+.dark {
+  background-color: black;
+  color: white;
+}
+
+.arrow {
+  font-size: 1.8rem;
+}
+
+@media only screen and (max-width:576px) {
+  
+  .work {
+    margin-left: .75rem;
+    margin-right: .75rem;
+}
+
 }
