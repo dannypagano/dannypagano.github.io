@@ -29,7 +29,6 @@ p a {
 
 h6 {
   font-family: "Generisch-Regular" !important;
-  opacity: 0.5;
 }
 
 
@@ -40,7 +39,10 @@ a {
 
 a:hover {
   opacity: 0.8;
-  color: inherit;
+  color: #6C757D;
+}
+.link {
+  text-decoration: underline;
 }
 
 nav a {
@@ -67,6 +69,10 @@ nav a:nth-child(2) {
 
 .arrow {
   font-size: 1.8rem;
+}
+
+.colophon {
+ height: 100%;
 }
 
 @media only screen and (max-width:576px) {
