@@ -93,8 +93,8 @@ span.dot {
   text-transform: uppercase;
   letter-spacing: 2px;
   position: absolute;
-  left: -100px;
-  top: 460px;
+  left: -180px;
+  top: 800px;
 }
 
 @media only screen and (max-width:576px) {
