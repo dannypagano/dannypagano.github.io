@@ -121,9 +121,9 @@ span.dot {
   }
 
   .navcol {
-    maxwidth: 33%;
+    max-width: 33%;
   }
-  
+
   span.dot {
     color: #000;
     background-color: #fff;
