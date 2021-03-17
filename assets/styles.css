@@ -93,7 +93,7 @@ span.dot {
   text-transform: uppercase;
   letter-spacing: 2px;
   position: absolute;
-  left: -180px;
+  left: -185px;
   top: 800px;
 }
 
@@ -102,5 +102,23 @@ span.dot {
   .work {
     margin-left: .75rem;
     margin-right: .75rem;
+  }
+}
+
+@media only screen and (max-width:576px) {
+  nav a {
+    font-size: 1.2rem;
+  }
+
+  #navcontainer {
+    margin-top: 6px;
+  }
+
+  footer a {
+    font-size: 1.2rem;
+  }
+
+  #footercontainer {
+    margin-top: 6px;
   }
 }
