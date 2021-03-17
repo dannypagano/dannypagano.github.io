@@ -111,8 +111,16 @@ span.dot {
     font-size: 1.2rem;
   }
 
+  nav a:nth-child(2) {
+      padding-left: .5rem;
+  }
+
   #logo {
     font-size: 1.25rem;
+  }
+
+  .container-fluid {
+    padding: 0px 6px 0px 6px;
   }
 
   span.dot {
