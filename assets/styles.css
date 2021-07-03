@@ -165,14 +165,17 @@ span.dot {
  height: 100%;
 }
 
+/*
 #disclaimer {
-  transform: rotate(90deg);
-  text-transform: uppercase;
-  letter-spacing: 2px;
+
   position: absolute;
-  left: -185px;
+  margin-left: -160px;
   top: 800px;
+  color: red;
+  z-index: 100;
+  transform: rotate(90deg);
 }
+*/
 
 img {
     max-width: 100%;
