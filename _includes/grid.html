@@ -1,0 +1,25 @@
+<div class="py-5 container-fluid work-grid">
+
+    <div class="row row-cols-1 row-cols-sm-1 rows-cols-md-2 row-cols-lg-2 row-cols-xl-2 row-cols-xxl-4 mx-2">
+
+    {% assign sorted = site.work | reverse %}
+      {% for work in sorted %}
+          <div class="col mb-2">
+            <div>
+              <div class="ratio pb-3"  style="--aspect-ratio: 66%">
+                  <a href="{{ work.url }}">
+                    {% assign image = work.image[0] %}
+                    {% include srcset.html %}
+                  </a>
+              </div>
+
+              <div>
+                <a href="{{ work.url }}"><h5>{{ work.title }}</h5></a>
+                <p class="text-muted">{{ work.preview | truncate: 120 }}</p>
+              </div>
+            </div>
+          </div>
+    {% endfor %}
+  </div>
+
+</div>

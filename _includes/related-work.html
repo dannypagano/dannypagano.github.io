@@ -1,0 +1,36 @@
+<div class="py-5 container-fluid work-grid">
+  <div class="container-fluid">
+      <h4 class="mx-2 py-5">Recent Projects</h4>
+  </div>
+  
+  <div class="row row-cols-1 row-cols-sm-1 rows-cols-md-2 row-cols-lg-2 row-cols-xl-2 row-cols-xxl-4 mx-2">
+    
+  {% assign sorted = site.work | reverse %}
+    {% for work in sorted | limit: 5 %}
+      {% if work.url != page.url %}
+        {% if forloop.index <= 4 or found %}
+          <div class="col mb-2">
+            <div>
+              <div class="ratio pb-3"  style="--aspect-ratio: 66%">
+                  {% for image in work.image %}<a href="{{ work.url }}"><img width="100%" src="{{ image.feature }}"></a>{% endfor %}
+              </div>
+              
+              <div>
+                <a href="{{ work.url }}"><h5>{{ work.title }}</h5></a>
+                <p class="text-muted">{{ work.preview | truncate: 120 }}</p>
+              </div>
+            </div>
+          </div>
+        {% endif %}
+      {% else %}
+          {% assign found = true %}
+      {% endif %}
+    {% endfor %}
+  </div>
+
+  <div class="container-fluid">
+    <h5 class="mx-2 py-5 text-muted"><a href="/">All Projects <span class="arrow">→</span></a></h5>
+  </div>
+    
+</div>
+

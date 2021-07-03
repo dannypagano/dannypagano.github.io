@@ -1,0 +1,18 @@
+<div class="pt-5 pb-2 container">
+  <div class="row row-cols-1 row-cols-sm-1 row-cols-lg-2 work">
+    
+    <div class="col">
+      <h1>{{ page.title }}</h1>
+      <div>
+          {% for item in page.categories %}
+              <h6 class="text-muted">{{ item.category }}</h6>
+          {% endfor %}
+      </div>
+    </div>
+
+    <div class="col pt-2">
+      <h5 class="text-muted">{{ page.preview }}</h5>
+    </div>
+    
+  </div>
+</div>
