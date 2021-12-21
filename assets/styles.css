@@ -171,6 +171,13 @@ span.dot {
 	color: #fff;
 }
 
+.error {
+	font-size: 25rem;
+}
+
+.error-container {
+	height: 100%;
+}
 /*
 #disclaimer {
 
@@ -193,6 +200,10 @@ img {
 }
 
 @media only screen and (max-width:576px) {
+
+	.error {
+		font-size: 15rem;
+	}
 
   .work {
     margin-left: .75rem;
