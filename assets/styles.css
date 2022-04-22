@@ -81,9 +81,10 @@ License: 	The WebFont(s) listed in this document must follow the YouWorkForThem
 	font-style: normal;
 }
 body {
-  background-color: black ;
+	background-color: black;
   color: white ;
   font-family: "Alliance-Light";
+	--animate-duration: 0.5s;
 }
 
 h1, h2, h3, h4{
@@ -144,7 +145,7 @@ span.dot {
   letter-spacing: -1px;
 }
 
-.work-grid p {
+p {
   font-family: "Alliance-Regular";
 }
 
