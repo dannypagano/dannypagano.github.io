@@ -179,6 +179,10 @@ p {
 .error-container {
 	height: 100%;
 }
+
+.link {
+	color: #fff;
+}
 /*
 #disclaimer {
 
