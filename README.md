@@ -1,6 +1,6 @@
 # brownfox
 
-A minimal portfolio theme for Jekll. 
+A minimal portfolio theme for Jekyll. 
 
 
 ## Installation
