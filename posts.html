@@ -1,0 +1,39 @@
+---
+title: Posts
+layout: default
+permalink: /posts
+published: false
+---
+
+<div class="page-wrapper">
+<div class="py-5">
+  <div class="row row-cols-1 row-cols-md-1 row-cols-lg-2 mx-2">
+    <div class="col">
+      <div class="col col-sm-12 col-md-12 col-lg-10">
+      <h1>{{page.title}}</h1>
+      <h5>Opinions, ideas, musings, strongly held beliefs poorly explained - mostly focused on design and technology, but don't get angry with me if other topics slip in without warning.</h5>
+      <h5>Updated irregularly - so check back often because you never know what you'll find here next. Find it all here.</h5>
+</div>
+    </div>
+      <div class="col">
+      <div class="row">
+        <div class="col">
+            <hr></hr>
+          {% for post in site.posts %}
+          <div class="row">
+            <div class="pb-2">
+            <h6 class="post-date text-muted">{{ post.date | date: "%m.%d.%Y" }}
+              {% if post.tags and post.tags.size != 0 %}
+                - {% for tag in post.tags %}<span class="tag-pill rounded-pill {{ tag }}">{{ tag }}</span>{% unless forloop.last %}&nbsp;{% endunless %}{% endfor %}
+              {% endif %}
+              </h6>
+            </div>
+            <h4 class="post-title"><a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a></h4>
+          </div>
+          <hr></hr>
+          {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>
+</div>

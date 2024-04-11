@@ -1,0 +1,23 @@
+<div class="py-5">
+  <div class="row row-cols-1 row-cols-sm-1 rows-cols-md-2 row-cols-lg-2 row-cols-xl-2 row-cols-xxl-4 mx-2">
+
+    {% assign sorted = site.work | reverse %}
+      {% for work in sorted %}
+          <div class="col mb-2 animate__animated animate__fadeIn">
+            <div>
+              <div class="ratio pb-3"  style="--aspect-ratio: 66%">
+                  <a href="{{ work.url }}" title="{{ work.title }}">
+                    {% assign image = work.image[0] %}
+                    {% include responsive-images-grid.html %}
+                  </a>
+              </div>
+
+              <div class="pb-5">
+                <a href="{{ work.url }}" title="{{ work.title}}"><h5>{{ work.title }}</h5></a>
+                <p >{{ work.description | truncate: 120 }}</p>
+              </div>
+            </div>
+          </div>
+    {% endfor %}
+  </div>
+</div>
