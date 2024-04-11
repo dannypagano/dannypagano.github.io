@@ -1,0 +1,61 @@
+# .yml files are super finicky, only use single spaces to indent subsequent lines. 
+# Each "record" needs to be indented the same amount as it's parent "label"
+# 
+# For Example:
+# - Label:
+#   key: var
+#   key: var
+#   key: var
+#
+# Have fun!
+
+- htg:
+  name: HTG Molecular Diagnostics
+  client: HTG Molecular Diagnostics
+  url: /work/htg
+  image: ../assets/3000x2000-test.jpg
+  description: Here's the description
+  
+- glennon:
+  name: Robert Glennon
+  client: Robert Glennon
+  url: /work/robert-glennon
+  image: ../assets/3000x2000-test.jpg
+  
+- russell:
+  name: Joellen Russell
+  client: Joellen Russell
+  url: /work/joellen-russell
+  image: ../assets/3000x2000-test.jpg
+  
+- nixie :
+  name: Nixie Watch
+  client: David Forbes
+  url: /work/nixie-watch
+  image: ../assets/nixie.jpg
+  description: Shopify website build with commissioned product photography for a unique watch.
+  
+- moonfest:
+  name: Moonfest
+  client: University of Arizona
+  url: /work/moonfest
+  image: ../assets/moonfest.jpg
+  description: Logo design for the University of Arizona's half-centenary celebration of the Apollo 11 moon landing.
+  
+- clip:
+  name: Clip Health
+  client: Luminostics, Inc.
+  url: /work/clip-health
+  image: ../assets/clip.jpg
+  description: Visual identity for a cutting-edge Covid-19 diagnostic, made to work on an iPhone.
+  
+- aspera:
+  name: Aspera
+  client: Aspera
+  url: /work/aspera
+  image: ../assets/aspera.jpg
+  description: Logo design and layout work for a post-grad pursuing NASA funding to build a cubesat-sized orbital space telescope.
+  video: https://player.vimeo.com/video/149370353
+  
+
+

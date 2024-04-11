@@ -1,0 +1,34 @@
+---
+layout: default
+---
+<div class="pt-3 container-fluid">
+  <div class="row">
+    <div class="col-2 order-3 order-sm-3 order-md-1">
+      </div>
+  <div class="col-12 col-sm-12 col-md-7 col-lg-6 col-xl-6 col-xxl-4 order-2 order-sm-2 order-md-1 post-margin" id="post-column">
+    <hr></hr>
+    <h1 class="pb-3">{{page.title}}</h1>
+    <h5 class="pb-3">{{ page.excerpt }}</h5>
+    <div class="pb-5">{{ content }}</div>
+    <hr></hr>
+    <h5>
+        <a href="/posts" title="All Posts"><span class="arrow">←</span> All Posts</a>
+    </h5>
+  </div>
+  <div class="col col-md-2 order-sm-1 order-1 order-md-2" id="post-meta-column">
+    <div>
+      <hr></hr>
+        <h6>Posted On</h6>
+      <p>{{ page.date | date: "%m.%d.%Y" }}</p>
+    </div>
+    <div class="pb-5">
+      <hr></hr>
+      <h6>Category</h6>
+      <h6>{% if page.tags and page.tags.size != 0 %}
+      {% for tag in page.tags %}<span class="tag-pill rounded-pill {{ tag }}">{{ tag }}</span>{% unless forloop.last %}&nbsp;{% endunless %}{% endfor %}
+      {% endif %}
+      </h6>
+    </div>
+  </div>
+  </div>
+</div>

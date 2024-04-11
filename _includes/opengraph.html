@@ -1,0 +1,28 @@
+<meta content="{{ site.title }}" property="og:site_name" />
+{% if page.title %}
+<meta content="{{ page.title }}" property="og:title" />
+{% else %}
+<meta content="{{ site.title }}" property="og:title" />
+{% endif %} {% if page.description %}
+<meta content="{{ page.description }}" property="og:description" />
+{% else %}
+<meta content="{{ site.description }}" property="og:description" />
+{% endif %} {% if page.url %}
+<meta content="{{ site.url }}{{ page.url }}" property="og:url" />
+{% endif %} {% if page.date %}
+<meta
+  content="{{ page.date | date_to_xmlschema }}"
+  property="article:published_time"
+/>
+{% endif %} {% if page.image %} {% assign image = page.image[0] %} {% assign
+width = 1300 %}
+<meta
+  content="https://dannypagano.com{{ site.image_url }}/{{ width }}w/{{ image.src }}"
+  property="og:image"
+/>
+{% else %}
+<meta
+  content="https://dannypagano.com/images/opengraph.png"
+  property="og:image"
+/>
+{% endif %}

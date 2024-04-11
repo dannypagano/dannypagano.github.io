@@ -15,33 +15,30 @@ License: 	The WebFont(s) listed in this document must follow the YouWorkForThem
 */
 
 @font-face {
-	font-family: 'Alliance-Regular';
-	src: url('alliance-no-1-regular.eot');
-	src: url('alliance-no-1-regular.eot?#iefix') format('embedded-opentype'),
-             url('alliance-no-1-regular.woff2') format('woff2'),
-	     url('alliance-no-1-regular.woff') format('woff'),
-	     url('alliance-no-1-regular.ttf') format('truetype'),
-	     url('alliance-no-1-regular.svg#youworkforthem') format('svg');
-	font-weight: normal;
-	font-style: normal;
-	font-display: swap;
+  font-family: "Alliance-Regular";
+  src: url("alliance-no-1-regular.eot");
+  src: url("alliance-no-1-regular.eot?#iefix") format("embedded-opentype"),
+    url("alliance-no-1-regular.woff2") format("woff2"),
+    url("alliance-no-1-regular.woff") format("woff"),
+    url("alliance-no-1-regular.ttf") format("truetype"),
+    url("alliance-no-1-regular.svg#youworkforthem") format("svg");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
-	font-family: 'Alliance-SemiBold';
-	src: url('alliance-no-1-semibold.eot');
-	src: url('alliance-no-1-semibold.eot?#iefix') format('embedded-opentype'),
-             url('alliance-no-1-semibold.woff2') format('woff2'),
-	     url('alliance-no-1-semibold.woff') format('woff'),
-	     url('alliance-no-1-semibold.ttf') format('truetype'),
-	     url('alliance-no-1-semibold.svg#youworkforthem') format('svg');
-	font-weight: normal;
-	font-style: normal;
-	font-display: swap;
+  font-family: "Alliance-SemiBold";
+  src: url("alliance-no-1-semibold.eot");
+  src: url("alliance-no-1-semibold.eot?#iefix") format("embedded-opentype"),
+    url("alliance-no-1-semibold.woff2") format("woff2"),
+    url("alliance-no-1-semibold.woff") format("woff"),
+    url("alliance-no-1-semibold.ttf") format("truetype"),
+    url("alliance-no-1-semibold.svg#youworkforthem") format("svg");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
 }
-
-
-
 
 /*
 Font: 		Generisch Mono
@@ -60,16 +57,16 @@ License: 	The WebFont(s) listed in this document must follow the YouWorkForThem
 */
 
 @font-face {
-	font-family: 'Generisch-Regular';
-	src: url('generisch-mono-regular.eot');
-	src: url('generisch-mono-regular.eot?#iefix') format('embedded-opentype'),
-             url('generisch-mono-regular.woff2') format('woff2'),
-	     url('generisch-mono-regular.woff') format('woff'),
-	     url('generisch-mono-regular.ttf') format('truetype'),
-	     url('generisch-mono-regular.svg#youworkforthem') format('svg');
-	font-weight: normal;
-	font-style: normal;
-	font-display: swap;
+  font-family: "Generisch-Regular";
+  src: url("generisch-mono-regular.eot");
+  src: url("generisch-mono-regular.eot?#iefix") format("embedded-opentype"),
+    url("generisch-mono-regular.woff2") format("woff2"),
+    url("generisch-mono-regular.woff") format("woff"),
+    url("generisch-mono-regular.ttf") format("truetype"),
+    url("generisch-mono-regular.svg#youworkforthem") format("svg");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
 }
 
 /* Define the "system" font family */
@@ -77,37 +74,37 @@ License: 	The WebFont(s) listed in this document must follow the YouWorkForThem
   font-family: system;
   font-style: normal;
   font-weight: 300;
-  src: local(".SFNSText-Light"), local(".HelveticaNeueDeskInterface-Light"), local(".LucidaGrandeUI"), local("Ubuntu Light"), local("Segoe UI Light"), local("Roboto-Light"), local("DroidSans"), local("Tahoma");
+  src: local(".SFNSText-Light"), local(".HelveticaNeueDeskInterface-Light"),
+    local(".LucidaGrandeUI"), local("Ubuntu Light"), local("Segoe UI Light"),
+    local("Roboto-Light"), local("DroidSans"), local("Tahoma");
 }
-
-
 
 /* styles to set narrow page width to 1920px */
 main {
-	max-width: 1920px;
+  max-width: 1920px;
 }
 
 #navigation-bar {
-	position: absolute;
-	z-index: 10;
-	top: 0px;
-	z-index: 10;
-	right: 0px;
-	left: 0px;
-	max-width: 1920px;
+  position: absolute;
+  z-index: 10;
+  top: 0px;
+  z-index: 10;
+  right: 0px;
+  left: 0px;
+  max-width: 1920px;
 }
 
 #footer-container {
-	max-width: 1920px;
+  max-width: 1920px;
 }
 
 nav ul {
-	list-style: none;
-	margin-right: 2rem;
+  list-style: none;
+  margin-right: 2rem;
 }
 
 #logo {
-	margin-left: 1rem;
+  margin-left: 1rem;
 }
 
 /* end of styles to narrow overall page width to 1920px*/
@@ -146,42 +143,42 @@ nav ul {
 /* end of styles to set overall page width to 100% */
 
 body {
-	background-color: black;
-  color: white ;
+  background-color: #030303;
+  color: #eeebea;
   font-family: "Alliance-Regular", Helvetica, Arial, "System";
-	--animate-duration: 1s;
-
+  --animate-duration: 1s;
 }
 
-h1, h2, h3 {
-    font-family: "Alliance-SemiBold", Helvetica, Arial, "System";
+h1,
+h2,
+h3 {
+  font-family: "Alliance-SemiBold", Helvetica, Arial, "System";
 }
 
 h2 {
-	font-size: 1.75rem;
+  font-size: 1.75rem;
 }
 
 h5 {
   font-family: "Alliance-Regular", Helvetica, Arial, "System";
   line-height: 2rem;
-	font-size: 1.5rem;
+  font-size: 1.5rem;
 }
 
 #post-column h5 {
-	font-family: "Alliance-Regular", Helvetica, Arial, "System";
+  font-family: "Alliance-Regular", Helvetica, Arial, "System";
 }
 
 h6 {
   font-family: "Generisch-Regular", Helvetica, Arial, "System";
-	font-size: 1.2rem;
+  font-size: 1.2rem;
 }
 
 p {
   font-family: "Alliance-Regular", Helvetica, Arial, "System";
-	font-size: 1.2rem;
-	color: #6c757d;
+  font-size: 1.2rem;
+  color: #6c757d;
 }
-
 
 a {
   text-decoration: none;
@@ -189,8 +186,8 @@ a {
 }
 a:hover {
   opacity: 0.75;
-	color: inherit;
-	transition: 0.2s;
+  color: inherit;
+  transition: 0.2s;
 }
 
 .link {
@@ -198,41 +195,41 @@ a:hover {
 }
 
 nav ul {
-	list-style: none;
+  list-style: none;
 }
 nav li {
-	display: inline-block;
+  display: inline-block;
 }
 nav a {
   font-size: 1.5rem;
-	padding-left: 1rem;
+  padding-left: 1rem;
 }
 
 nav a first:child {
-	padding-left: 0px;
+  padding-left: 0px;
 }
 
 #logo {
-	max-width: 250px;
-	margin-top: -2px;
+  max-width: 250px;
+  margin-top: -2px;
 }
 
 #intro-block h3 {
-	font-family: "Alliance-Regular";
+  font-family: "Alliance-Regular";
 }
 
 .page-wrapper {
-	margin-top: 200px;
+  margin-top: 200px;
 }
 
 .light {
-  background-color: white ;
-  color: black ;
+  background-color: #eeebea;
+  color: #030303;
 }
 
 .dark {
-  background-color: black;
-  color: white;
+  background-color: #030303;
+  color: #eeebea;
 }
 
 .arrow {
@@ -240,139 +237,125 @@ nav a first:child {
 }
 
 .colophon {
- height: 100%;
+  height: 100%;
 }
 
 #logo a:hover {
-	opacity: .8;
+  opacity: 0.8;
 }
 
 .error {
-	font-size: 25rem;
+  font-size: 25rem;
 }
 
 .error-container {
-	height: 100%;
+  height: 100%;
 }
 
 .link {
-	color: #fff;
+  color: #fff;
 }
 
 .tag-pill {
-		padding: 5px 10px;
-		color: rgba(0,0,0,.75);
-		font-size: .9rem;
+  padding: 5px 10px;
+  color: rgba(0, 0, 0, 0.75);
+  font-size: 0.9rem;
 }
 
 .tag-pill.design {
-	background-color: #EFCC56;
-
+  background-color: #efcc56;
 }
 
 .tag-pill.technology {
-	background-color:#3EB78B;
+  background-color: #3eb78b;
 }
 
 .tag-pill.general {
-	background-color: #B95E7C;
+  background-color: #b95e7c;
 }
 
 .tag-pill.learning {
-	background-color: #5A76E8;
+  background-color: #5a76e8;
 }
 
 .post-date {
-	font-size: 0.9rem;
+  font-size: 0.9rem;
 }
 .post-tag {
-	vertical-align: middle;
+  vertical-align: middle;
 }
 
-
 hr {
-	border: 1px solid #ADBAC8;
+  border: 1px solid #adbac8;
 }
 
 img {
-    max-width: 100%;
-    height: auto;
+  max-width: 100%;
+  height: auto;
 }
 
 .ratio-3x2 {
-	--aspect-ratio: calc(2/3 * 100%);
+  --aspect-ratio: calc(2 / 3 * 100%);
 }
 
 .hero-header {
-	top: 0px;
-	left: 0px;
-	width: 100%;
-	/*
-	z-index: -1;
-	background-size: cover;
-	height: 50vh;
-	background-position: center;
-	opacity: .75;
-	*/
+  top: 0px;
+  left: 0px;
+  width: 100%;
 }
 
 .hero-header-color {
-	top: 0px;
-	left: 0px;
-	width: 100%;
-	z-index: -1;
-	height: 33vh;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  z-index: -10;
+  height: 33vh;
 }
-
 .hero-image {
-	z-index: -10;
-	width: 100%;
-	height: 75vh;
-	object-fit: cover;
+  z-index: -10;
+  width: 100%;
+  height: 75vh;
+  object-fit: cover;
 }
-
-
 
 #post-column {
-	max-width: 730px;
+  max-width: 730px;
 }
 
-@media only screen and (max-width:576px) {
-
-	.error {
-		font-size: 15rem;
-	}
-
-  .row {
-    --bs-gutter-x: .5rem;
+@media only screen and (max-width: 576px) {
+  .error {
+    font-size: 15rem;
   }
 
-	#navcontainer {
-		text-align: right;
-	}
+  .row {
+    --bs-gutter-x: 0.5rem;
+  }
 
- #navcontainer li a {
-	 margin: .5rem 10px .5rem 0px;
- }
+  #navcontainer {
+    text-align: right;
+  }
 
- #logo {
-	 margin-left: 0.5rem;
- }
+  #navcontainer li a {
+    margin: 0.5rem 10px 0.5rem 0px;
+  }
+
+  #logo {
+    margin-left: 0.5rem;
+  }
 
   .navcol {
     max-width: 33%;
   }
 
-	nav ul {
-		list-style: none;
-		margin-right: 1rem;
-	}
+  nav ul {
+    list-style: none;
+    margin-right: 1rem;
+  }
 
-	h2.intro  {
-		font-size: 1.5rem;
-		line-height: 2rem;
-	}
-
+  h2.intro {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
 
   footer a {
     font-size: 1rem;

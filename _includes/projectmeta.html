@@ -1,0 +1,40 @@
+
+<div class="row row-cols-sm-1 row-cols-md-1 row-cols-lg-2 pb-5">
+  <div class="col">
+    <div class="col-12 col-md-10 col-lg-10 pb-5">
+      <h1>{{page.title}}</h1>
+      <h5 class="pb-3">{{ page.description }}</h5>
+  </div>
+  </div>
+
+  <div class="row">
+
+    <div class="col-12 col-md-6">
+      <div class="pb-3">
+        <hr></hr>
+          <h6>Deliverables</h6>
+        <p>{% for deliverable in page.deliverables %}{{ deliverable }}{% unless forloop.last %}<br>{% endunless %}
+        {% endfor %}
+        </p>
+      </div>
+    </div>
+
+    <div class="col-12 col-md-6">
+      <div class="pb-3">
+        <hr></hr>
+        <h6>Roles</h6>
+        <p>{% for role in page.roles %}{{ role }}{% unless forloop.last %}<br>{% endunless %}
+          {% endfor %}
+        </p>
+      </div>
+
+
+  </div>
+
+  {% if page.credit and page.credit !=0 %}
+  {% include credit.html %}
+  {% endif %}
+
+
+  </div>
+</div>
