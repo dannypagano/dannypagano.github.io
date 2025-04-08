@@ -1,5 +1,5 @@
 <img
   src="{{ site.image_url }}/{{ image.src }}"
   sizes="(min-width: 1871px) 1872px, 95vw"
-  srcset="{% for width in site.sizes %}/images/resized/{{ width }}/{{ image.src }} {{ width }}w{% if forloop.last == false %}, {% endif %}{% endfor %}"
+  srcset="{% for width in site.sizes %}/images/resized/{{ width }}/{{ image.src }} {% if forloop.last == false %}, {% endif %}{% endfor %}"
 />
