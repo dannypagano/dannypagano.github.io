@@ -50,13 +50,13 @@
     class="animate__animated animate__fadeIn"
     {%
     if
-    page.is_post=="true"
+    page.is_post="true"
     %}
-    style="background-color: #eeebea"
+    style="background-color: var(--secondary-background-color)"
     {%
     else
     %}
-    style="background-color: #030303"
+    style="background-color: var(--primary-background-color)"
     {%
     endif
     %}

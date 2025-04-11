@@ -79,9 +79,27 @@ License: 	The WebFont(s) listed in this document must follow the YouWorkForThem
     local("Roboto-Light"), local("DroidSans"), local("Tahoma");
 }
 
+/* Setting Variables */
+:root {
+  /* Scale */
+  --site-width: 1280px;
+  /* Colors */
+  --primary-background-color:#eeebea;
+  --secondary-background-color: ;
+  --primary-text-color:#030303;
+  --secondary-text-color:#6c757d;
+  /* Typography */
+  --base: 16px;
+  --h2: 1.75rem;
+  --font-sans: ;
+  --font-serif: ;
+  --font-mono: ;
+
+}
+
 /* styles to set narrow page width to 1920px */
 main {
-  max-width: 1920px;
+  max-width: var(--site-width);
 }
 
 #navigation-bar {
@@ -91,11 +109,11 @@ main {
   z-index: 10;
   right: 0px;
   left: 0px;
-  max-width: 1920px;
+  max-width: var(--site-width);
 }
 
 #footer-container {
-  max-width: 1920px;
+  max-width: var(--site-width);
 }
 
 nav ul {
@@ -143,8 +161,8 @@ nav ul {
 /* end of styles to set overall page width to 100% */
 
 body {
-  background-color: #030303;
-  color: #eeebea;
+  background-color: var(--primary-background-color);
+  color: var(--primary-text-color);
   font-family: "Alliance-Regular", Helvetica, Arial, "System";
   --animate-duration: 1s;
 }
@@ -177,7 +195,7 @@ h6 {
 p {
   font-family: "Alliance-Regular", Helvetica, Arial, "System";
   font-size: 1.2rem;
-  color: #6c757d;
+  color: var(--secondary-text-color);
 }
 
 a {
@@ -222,6 +240,7 @@ nav a first:child {
   margin-top: 200px;
 }
 
+/*
 .light {
   background-color: #eeebea;
   color: #030303;
@@ -231,6 +250,7 @@ nav a first:child {
   background-color: #030303;
   color: #eeebea;
 }
+*/
 
 .arrow {
   font-size: 1.8rem;
