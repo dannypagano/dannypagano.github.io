@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <!-- Required meta tags -->
@@ -47,20 +47,9 @@
     <title>{{ site.title }} · {{ page.title }}</title>
   </head>
   <body
-    class="animate__animated animate__fadeIn"
-    {%
-    if
-    page.is_post=="true"
-    %}
-    style="background-color: #eeebea"
-    {%
-    else
-    %}
-    style="background-color: #030303"
-    {%
-    endif
-    %}
-  >
+    class="animate__animated animate__fadeIn">
+  </body>
+   
     {% if page.hero and page.hero.size != 0 %}
     <div class="hero-header">
       <img
@@ -89,14 +78,8 @@
         "
       />
     </div>
-{% elsif page.color and page.color.size != 0 %}
-
-    <div
-      class="hero-header-color"
-      style="background-color: {{ page.color }}"
-    ></div>
-{% endif %} {% include header.html %} {% if page
-    == post %}
+    {% elsif page.color and page.color.size != 0 %} {% endif %} {% include
+    header.html %} {% if page == post %}
     <main class="py-2 container-fluid light">{{ content }}</main>
     {% else %}
     <main class="py-2 container-fluid">{{ content }}</main>

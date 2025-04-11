@@ -12,21 +12,20 @@
 # https://learn-the-web.algonquindesign.ca/topics/markdown-yaml-cheat-sheet/#yaml
 # https://learnxinyminutes.com/docs/yaml/
 #
+#
+#
 # Site settings
 # These are used to personalize your new site. If you look in the HTML files,
 # you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
-
 title: Danny
 email: howdy@dannypagano.com
-description: >- # this means to ignore newlines until "baseurl:"
-  Howdy! I’m Danny Pagano – a designer and photographer from Tucson, Arizona.
-  I design simple things for complex clients.
-baseurl: "/" # the subpath of your site, e.g. /blog
+description: Howdy! I’m Danny Pagano – a designer and photographer from Tucson, Arizona. I design simple things for complex clients.
 url: "https://dannypagano.com" # the base hostname & protocol for your site, e.g. http://example.com
+baseurl: "/" # the subpath of your site, e.g. /blog
 twitter_username: dannypagano
-github_username:  dannypagano
+github_username: dannypagano
 
 # Build settings
 
@@ -43,52 +42,17 @@ collections:
 
 defaults:
   - scope:
-     path: ""
-     type: posts
+      path: ""
+      type: posts
     values:
-     is_post: true
+      is_post: true
 
 # Plugins
 
-plugins:
-- jekyll-responsive-image
-
-
-# responsive image sizes for generating images
-sizes:
-  - 320  # [Required] How wide the resized image will be.
-  - 384
-  - 480
-  - 512
-  - 576
-  - 640
-  - 683
-  - 768
-  - 800
-  - 924
-  - 960
-  - 1025
-  - 1200
-  - 1366
-  - 1440
-  - 1600
-  - 1872
-  - 1920
-  - 2056
-image_url: /images/originals
-
-responsive_image:
-  # [Required]
-  # Path to the image template.
-  template: _includes/responsive-image.html #THIS ONE
-# [Optional, Default: 85]
-  # Quality to use when resizing images.
-  default_quality: 80
-# [Optional, Default: []]
-  # An array of resize configuration objects. Each object must contain at least
-  # a `width` value.
-  sizes:
-    - width: 320  # [Required] How wide the resized image will be.
+plugins: jekyll-responsive-image
+  # responsive image sizes for generating images
+  responsive_image_sizes:
+    - width: 320 # [Required] How wide the resized image will be.
     - width: 384
     - width: 480
     - width: 512
@@ -108,19 +72,31 @@ responsive_image:
     - width: 1920
     - width: 2056
 
-# [Optional, Default: false]
+responsive_image:
+  # [Required]
+  # Path to the image template.
+  template: _includes/responsive-images-grid.html #THIS ONE
+
+  # Quality to use when resizing images.
+  default_quality: 80
+  # [Optional, Default: []]
+  # An array of resize configuration objects. Each object must contain at least
+  # a `width` value.
+ 
+
+  # [Optional, Default: false]
   # Rotate resized images depending on their EXIF rotation attribute. Useful for
   # working with JPGs directly from digital cameras and smartphones
   auto_rotate: false
-# [Optional, Default: false]
+  # [Optional, Default: false]
   # Strip EXIF and other JPEG profiles. Helps to minimize JPEG size and win friends
   # at Google PageSpeed.
   strip: true
-# [Optional, Default: assets]
+  # [Optional, Default: assets]
   # The base directory where assets are stored. This is used to determine the
   # `dirname` value in `output_path_format` below.
   base_path: images/originals
-# [Optional, Default: assets/resized/%{filename}-%{width}x%{height}.%{extension}]
+  # [Optional, Default: assets/resized/%{filename}-%{width}x%{height}.%{extension}]
   # The template used when generating filenames for resized images. Must be a
   # relative path.
   #
@@ -133,20 +109,18 @@ responsive_image:
   #   %{height}      Height of the resized image
   #
   output_path_format: images/resized/%{width}/%{basename}
-# [Optional, Default: true]
+  # [Optional, Default: true]
   # Whether or not to save the generated assets into the source folder.
   save_to_source: false
-# [Optional, Default: false]
+  # [Optional, Default: false]
   # Cache the result of {% responsive_image %} and {% responsive_image_block %}
   # tags. See the "Caching" section of the README for more information.
   cache: false
-# [Optional, Default: []]
+  # [Optional, Default: []]
   # By default, only images referenced by the responsive_image and responsive_image_block
   # tags are resized. Here you can set a list of paths or path globs to resize other
   # images. This is useful for resizing images which will be referenced from stylesheets.
-  extra_images:
-    - images/originals/*
-
+#
 # Exclude from processing.
 # The following items will not be processed, by default.
 # Any item listed under the `exclude:` key here will be automatically added to
