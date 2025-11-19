@@ -99,6 +99,7 @@ PLATFORMS
   arm64-darwin-24
 
 DEPENDENCIES
+<<<<<<< HEAD
   http_parser.rb (~> 0.6.0)
   jekyll (~> 4.2.0)
   jekyll-feed (~> 0.12)
@@ -107,6 +108,12 @@ DEPENDENCIES
   tzinfo-data
   wdm (~> 0.1)
   webrick
+=======
+  brownfox!
+  jekyll-responsive-image
+  observer
+  webrick (~> 1.9.1)
+>>>>>>> ef050bc (attempt fix for responsive images plugin)
 
 BUNDLED WITH
    2.4.19
