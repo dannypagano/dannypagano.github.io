@@ -4,6 +4,6 @@ source "https://rubygems.org"
 
 gemspec
 
-gem "webrick", "~> 1.7"
+gem "webrick", "~> 1.9.1"
 gem "jekyll-responsive-image"
 gem "observer"
