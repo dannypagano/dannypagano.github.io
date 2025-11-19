@@ -86,6 +86,9 @@ DEPENDENCIES
   jekyll-responsive-image
   observer
   webrick (~> 1.9.1)
+<<<<<<< HEAD
+>>>>>>> ef050bc (attempt fix for responsive images plugin)
+=======
 >>>>>>> ef050bc (attempt fix for responsive images plugin)
 
 BUNDLED WITH
