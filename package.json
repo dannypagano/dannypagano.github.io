@@ -1,5 +1,6 @@
 {
   "dependencies": {
-    "deps": "^1.0.0"
+    "deps": "^1.0.0",
+    "imagemagick": "^0.1.3"
   }
 }
