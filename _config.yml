@@ -27,7 +27,7 @@ url: "https://dannypagano.com" # the base hostname & protocol for your site, e.g
 baseurl: "/" # the subpath of your site, e.g. /blog
 twitter_username: dannypagano
 github_username: dannypagano
-
+image_url: /images/originals
 # Build settings
 
 # Collections
