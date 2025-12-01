@@ -1,9 +1,42 @@
 ---
 layout: default
+title: {{ work.title }}
 ---
 
-<div class="py-5 container-fluid">
-{% include projectmeta.html %}
-{{ content }}
-{% include related-work.html %}
+<!----
+{% assign work = site.work | where: "title", page.title | first %}
+{% assign image = work.images | first %}
+{% assign images = site.static_files | where: "image", true %}
+{% assign image = images | first %}
+<div>
+    <img src="{{ site.url }}/{{ site.image_url }}/{{ work.slug }}{{ image.extname }}" alt="{{ work.title }} hero image" class="w-full mb-8 border-1"/>
 </div>
+---->
+{% assign images = site.static_files | where: "image", true | where_exp: "file", "file.path contains work.slug" %}
+{% assign image = images | first %}
+
+{% if work.snippet == true %}
+<div class="mb-8">
+    <p class="font-medium">All photos by <a href="{{ work.snippet }}">Julius Schlosburg</a></p>
+</div>
+{% for image in images %}
+<div>
+    <div class="grid grid-cols-1">
+
+        <img src="{{ site.url }}/{{ site.image_url }}/{{ work.slug }}/{{ image.name }}"  class="w-full border-1 mb-9">
+
+    </div>
+</div>
+{% endfor %}
+{% else %}
+{% assign images = site.static_files | where: "image", true | where_exp: "file", "file.path contains work.slug" %}
+{% assign image = images | first %}
+{% for image in images %}
+<div>
+    <div class="grid grid-cols-1">
+        <img src="{{ site.url }}/{{ site.image_url }}/{{ work.slug }}/{{ image.name }}"  class="w-full border-1 mb-9">
+    </div>
+</div>
+{% endfor %}
+{% endif %}
+

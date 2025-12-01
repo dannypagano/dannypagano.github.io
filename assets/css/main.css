@@ -1,0 +1,60 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "general-grotesque";
+  --font-mono: "general-grotesque-mono";
+  --ease-fluid: cubic-bezier(0.3, 0, 0, 1);
+  --ease-snappy: cubic-bezier(0.2, 0, 0, 1);
+
+}
+
+@font-face {
+font-family: "general-grotesque";
+   src: url(" ../fonts/GeneralGrotesque-Book.woff2") format("woff2-variations"),
+     url("../fonts/GeneralGrotesque-Book.woff")format("woff");
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+font-family: "general-grotesque";
+  src: url("../fonts/GeneralGrotesque-Regular.woff2") format("woff2-variations"),
+    url("../fonts/GeneralGrotesque-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+font-family: "general-grotesque-mono";
+  src: url("../fonts/GeneralGrotesqueMono-Regular.woff2") format("woff2-variations"),
+    url("../fonts/GeneralGrotesqueMono-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+html {
+  color: #282828;
+}
+body
+{
+ text-rendering: geometricPrecision;
+ -webkit-font-smoothing: antialiased;
+ -moz-osx-font-smoothing: grayscale;
+ background-color: #eeebea;
+}
+
+div,
+footer,
+img {
+   border-color: rgba(40,40,40,.1);
+}
+
+p {
+  color: rgba(40,40,40,.65);
+}
+
+
+@media (prefers-color-scheme: dark) {
+}
