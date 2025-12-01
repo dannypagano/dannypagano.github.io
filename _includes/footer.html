@@ -1,19 +1,43 @@
-<div class="py-5 container-fluid" id="footer-container">
-  <div class="container-fluid">
-  <div class="row row-cols-1 row-cols-lg-2">
-
-  <div class="col col-sm-6 col-md-6 col-lg-3">
-    <h5>
-        <a href="#" {% if page.is_post == true %} style="color: #030303;" {% else %} style="color: #EEEBEA;"{% endif %}title="Back to Top">Back to Top <span class="arrow">↖</span></a>
-    </h5>
-  </div>
-
-  <div class="col col-sm-6 col-md-6 col-lg-3">
-      <p class="text-muted pt-2 copyright">© <script type="text/javascript">
-        document.write(new Date().getFullYear());
-      </script> Danny Pagano</p>
-  </div>
-
+<footer class="mt-48 border-t-1 pt-4">
+<div class="grid grid-cols-2 gap-9 mb-32">
+    <div class="grid grid-cols-1">
+         <p>
+            © {{ site.time | date: "%Y" }} Danny Pagano
+        </p>
+    </div>
+    <div class="grid grid-cols-2">
+        <div class="grid grid-cols-1">
+        <ul>
+            <li>
+                <a href="{{ site.url }}/about">
+                    <p>
+                        About
+                    </p>
+                </a>
+            </li>
+            <li>
+                <a href="{{ site.url }}/work">
+                    <p>
+                        Work
+                    </p>
+                </a>
+            </li>
+            <li>
+                <a href="{{ site.url }}/contact">
+                    <p>
+                        Contact
+                    </p>
+                </a>
+            </li>
+        </ul>
+        </div>
+        <div class="grid grid-cols-1 justify-items-end">
+            <a href="#top">
+                <p>
+                    Back to top
+                </p>
+            </a>
+        </div>  
+        </div>
 </div>
-</div>
-</div>
+</footer>
