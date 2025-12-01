@@ -6,7 +6,7 @@
 {% else %}
 <meta name="twitter:title" content="{{ site.title }}" />
 {% endif %} {% if page.url %}
-<meta name="twitter:url" content="{{ site.url }}{{ page.url }}" />
+<meta name="twitter:url" content="{{ site.url }}/{{ page.url }}" />
 {% endif %} {% if page.description %}
 <meta name="twitter:description" content="{{ page.description }}" />
 {% else %}
@@ -15,7 +15,7 @@
 width = 1300 %}
 <meta
   name="twitter:image:src"
-  content="https://dannypagano.com{{ site.image_url }}/resized/{{ width }}/{{ image.src }}"
+  content="https://dannypagano.com/{{ site.image_url }}/resized/{{ width }}/{{ image.src }}"
 />
 {% else %}
 <meta

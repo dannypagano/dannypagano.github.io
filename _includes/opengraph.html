@@ -8,7 +8,7 @@
 {% else %}
 <meta content="{{ site.description }}" property="og:description" />
 {% endif %} {% if page.url %}
-<meta content="{{ site.url }}{{ page.url }}" property="og:url" />
+<meta content="{{ site.url }}/{{ page.url }}" property="og:url" />
 {% endif %} {% if page.date %}
 <meta
   content="{{ page.date | date_to_xmlschema }}"
@@ -17,7 +17,7 @@
 {% endif %} {% if page.image %} {% assign image = page.image[0] %} {% assign
 width = 1300 %}
 <meta
-  content="https://dannypagano.com{{ site.image_url }}/{{ width }}w/{{ image.src }}"
+  content="https://dannypagano.com/{{ site.image_url }}/{{ width }}w/{{ image.src }}"
   property="og:image"
 />
 {% else %}
