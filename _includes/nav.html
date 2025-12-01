@@ -1,0 +1,48 @@
+<nav class="grid grid-cols-1 md:grid-cols-2 gap-9 mb-32">
+    <a href="{{ site.url }}">
+        <!--- <div class="align-middle my-auto">{% assign color = "var(--color-stone-300)" %} --->
+        <div class="align-middle my-auto">{% assign color = "#000000" %}
+        <svg width="247" height="64" viewBox="0 0 253 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="3" y="32" width="8" height="32" fill="{{ color }}"/>
+            <path d="M0 0L3 0L3 32L0 32L0 0Z" fill="{{ color }}"/>
+            <rect x="11" width="20" height="32" fill="{{ color }}"/>
+            <rect x="31" y="32" width="35" height="32" fill="{{ color }}"/>
+            <rect x="66" width="65" height="32" fill="{{ color }}"/>
+            <rect x="131" y="32" width="122" height="32" fill="{{ color }}"/>
+        </svg>
+    </div>
+    </a>
+    <div class="grid grid-cols-1 sm:grid-cols-3">
+        <div class="grid grid-cols-1 col-span-2 mb-4">
+        <h1>
+            {{ site.description }}
+        </h1>
+    </div>
+    <div class="grid grid-cols-1 col-span-1 mb-4 lg:justify-items-end">
+        <ul>
+            <li>
+                <a href="{{ site.url }}/about">
+                    <p>
+                        About
+                    </p>
+                </a>
+            </li>
+            <li>
+                <a href="{{ site.url }}/work">
+                    <p>
+                        Work
+                    </p>
+                </a>
+            </li>
+            <li>
+                <a href="{{ site.url }}/contact">
+                    <p>
+                        Contact
+                    </p>
+                </a>
+            </li>
+        </ul>
+    </div>
+    
+    </div>
+</nav>
