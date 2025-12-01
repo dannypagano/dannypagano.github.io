@@ -34,9 +34,6 @@ GEM
       jekyll (>= 3.7, < 5.0)
     jekyll-sass-converter (2.2.0)
       sassc (> 2.0.1, < 3.0)
-    jekyll-srcset (0.1.3)
-      jekyll (> 2)
-      rmagick
     jekyll-watch (2.2.1)
       listen (~> 3.0)
     kramdown (2.5.1)
@@ -48,18 +45,13 @@ GEM
       rb-fsevent (~> 0.10, >= 0.10.3)
       rb-inotify (~> 0.9, >= 0.9.10)
     mercenary (0.4.0)
-    observer (0.1.2)
     pathutil (0.16.2)
       forwardable-extended (~> 2.6)
-    pkg-config (1.6.4)
     public_suffix (6.0.2)
     rb-fsevent (0.11.2)
     rb-inotify (0.11.1)
       ffi (~> 1.0)
     rexml (3.4.4)
-    rmagick (6.1.4)
-      observer (~> 0.1)
-      pkg-config (~> 1.4)
     rouge (3.30.0)
     safe_yaml (1.0.5)
     sassc (2.4.0)
@@ -67,7 +59,6 @@ GEM
     terminal-table (2.0.0)
       unicode-display_width (~> 1.1, >= 1.1.1)
     unicode-display_width (1.8.0)
-    webrick (1.9.1)
 
 PLATFORMS
   arm64-darwin-24
@@ -77,11 +68,9 @@ DEPENDENCIES
   http_parser.rb (~> 0.6.0)
   jekyll (~> 4.2.0)
   jekyll-feed (~> 0.12)
-  jekyll-srcset
   tzinfo (>= 1, < 3)
   tzinfo-data
   wdm (~> 0.1)
-  webrick
 
 BUNDLED WITH
    2.4.19
