@@ -15,9 +15,9 @@ title: {{ work.title }}
 {% assign images = site.static_files | where: "image", true | where_exp: "file", "file.path contains work.slug" %}
 {% assign image = images | first %}
 
-{% if work.snippet == true %}
+{% if work.credit == true %}
 <div class="mb-8">
-    <p class="font-medium">All photos by <a href="{{ work.snippet }}">Julius Schlosburg</a></p>
+    <p class="font-medium">All photos by <a href="{{ work.credit-url }}">Julius Schlosburg</a></p>
 </div>
 {% for image in images %}
 <div>
