@@ -6,23 +6,23 @@ layout: default
     <div class="my-8 border-t-1 pt-4">
             <h2 class="font-medium mb-8">Selected Work</h2>
     </div>
-        <div class="grid gap-9 mb-8 md:gap-4 grid-cols-1 md:grid-cols-2">
+        <div class="grid gap-4 mb-8 md:gap-9 grid-cols-1 md:grid-cols-2">
             {% assign sorted = site.work %}
             {% for work in sorted limit:4 %}
-            <div class="transition-opacity duration-50 hover:opacity-80">
+            <div class="transition-opacity duration-50">
                 <a href="{{ site.url }}{{ work.url }}">
                 {% assign images = site.static_files | where: "image", true | where_exp: "file", "file.path contains work.slug" %}
                 {% assign image = images | first %}
                 {% if image %}
-                <img height:325 width:100% class="border-1 mb-4" src="{{ image.path | relative_url }}" alt="{{ work.title }}">
-                {% endif %}
+                <img height:325 width:100% class="border-1 mb-4 transition-opacity duration-500 hover:opacity-80" src="{{ image.path | relative_url }}" alt="{{ work.title }}">
+                {% endif %}</a>
                 <h3 class="mb-2">
                     {{ work.title }}
                 </h3>
-                <p>
+                <p class="mb-4">
                     {{ work.description | truncate: 120 }}
                 </p>
-                </a>
+                
             </div>
             {% endfor %}
         </div>
@@ -48,7 +48,8 @@ layout: default
             </div>
             <div class="grid grid-cols-2 pb-2 border-t border-0.5 pt-2 gap-9">
                 <div class="grid grid-cols-1 my-2">
-                    <h3>Tailscale</h3>
+                    <h3>
+                        <a href="https://tailscale.com" target="_blank">Tailscale ↗</a></h3>
                 </div>
                 <div class="grid grid-cols-1">
                     <div class="grid grid-cols-2 my-2">
@@ -100,7 +101,7 @@ layout: default
             </div>
                 <div class="grid grid-cols-2 pb-2 border-t border-0.5 pt-2 gap-9">
                     <div class="grid grid-cols-1 my-2">
-                        <h3>Godat Design</h3>
+                        <h3><a href="https://godatdesign.com" target="_blank">Godat Design ↗</a></h3>
                     </div>
                         <div class="grid grid-rows-3">
                             <div class="grid grid-cols-2 my-2">
@@ -132,45 +133,4 @@ layout: default
             </div>
         </div>
     </div>
-</div>
-<div class="border-t-1 pt-4">
-            <h2 class="font-medium mb-8">About</h2>
-        </div>  
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-9 align-top">
-                    <div class="grid grid-cols-1">
-                        <h3 class="mb-2">
-                            Howdy, I’m Danny Pagano – a designer and photographer from Tucson, Arizona with wide-ranging experience across creative disciplines.
-                        </h3>
-                        <p class="mb-2"> 
-                            My formal design experience spans corporate identity design, web and digital design,
-                            in addition to marketing and communication strategy.
-                            My approach to any design challenge leverages cross-disciplinary ideas in design, 
-                            technology, and imaging-making to produce simple communicative work for complex clients.
-                        </p>
-                        <p class="mb-2">
-                            I'm a quick study of new ideas and skills, and relish the challenge of applying that 
-                            knowledge to whatever problem I'm currently tackling.</p>
-                        <p class="mb-2">
-                            I spend a lot of time thinking about sustainability, climate and permaculture. 
-                            I dig riding bikes, playing golf and camping. Outside of work, I will attempt  
-                            to take a DIY approach to virtually any project with mixed results.</p>
-                        </p>
-                    </div>
-                    <div class="grid grid-cols-1 content-start">
-                         <h3 class="mb-2">Land Acknowledgement</h3>
-                         <p class="mb-4">
-                                I acknowledge the Tohono O’odham, Hohokam, and Pascua Yaqui peoples who are the 
-                                ancestral stewards of the unceded lands where I live and work. 
-                                I pay respect to their Elders past and present.
-                         </p>
-                         <h3 class="mb-2">Colophon</h3>
-                         <p class="mb-">
-                              Design, development and photography by Danny Pagano unless otherwise noted. 
-                              Typefaces are General Grotesque and General Grotesque Mono, from General Type Studio. 
-                              Site built with Jekyll, Tailwind CSS, and hosted on Github Pages.
-                         </p>
-                    </div>
-                </div>
-            </div>
-        </div>
 </div>
