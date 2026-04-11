@@ -1,0 +1,21 @@
+<!--- 
+<div class=" background-color: {{ site.mat-color }}; padding:{{ site.mat-size}}; width:100%">
+        <img src="assets/images/hamilton/hamilton.jpeg">
+</div>
+
+{% assign images = site.static_files | where: "image", true | where_exp: "file", "file.path contains work.slug" %}
+{% assign image = images | first %}
+{% assign image_width = width for image in site.data.imagesizes %}
+
+--->
+
+{%for image in site.data.images %}
+    {% if image.name contains work.slug %}
+        {% assign width = grid-cols-1 %}
+        {% assign height = auto %}
+    {% endif %}
+
+<div class="w-[calc ( {{ image.width }} + 100px )]] p-8">
+        <img src="assets/images/{{page.slug}}/{{ image.name }}" width="{{ image.width }}" height="{{ image.height }}">
+</div>
+{% endfor %}
