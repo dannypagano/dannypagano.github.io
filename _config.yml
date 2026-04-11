@@ -30,8 +30,8 @@ github_username: dannypagano
 image_url: assets/images
 
 # Build settings
-plugins:
-  - jekyll-feed
+#plugins:
+#  - jekyll-feed
 
 # Collections
 collections:
