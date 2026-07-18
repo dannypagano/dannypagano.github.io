@@ -1,7 +1,6 @@
 .DS_store
 _site
-.github
 .jekyll-cache
-.LOCAL_DEV.md
+local_dev.md
 .vscode
 node_modules
