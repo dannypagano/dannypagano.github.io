@@ -26,7 +26,7 @@
  
 <meta content="Howdy! I’m Danny Pagano – a designer from Tucson, Arizona. I design simple things for complex clients." property="og:description" />
  
-<meta content="http://localhost:4000/404.html" property="og:url" />
+<meta content="http://0.0.0.0:4000/404.html" property="og:url" />
   
 <meta
   content="https://dannypagano.com/images/opengraph.png"
@@ -41,7 +41,7 @@
 
 <meta name="twitter:title" content="Danny" />
  
-<meta name="twitter:url" content="http://localhost:4000/404.html" />
+<meta name="twitter:url" content="http://0.0.0.0:4000/404.html" />
  
 <meta name="twitter:description" content="Howdy! I’m Danny Pagano – a designer from Tucson, Arizona. I design simple things for complex clients." />
  
@@ -54,10 +54,10 @@
 
     <title>Danny · </title>
 </head>
-<nav class="grid grid-cols-1 mb-12 gap-9 lg:mb-24 md:grid-cols-2">
+<nav class="grid grid-cols-1 mb-12 md:grid-cols-2 gap-9">
     <div class="grid-cols-1">
         <svg width="253" height="64" viewBox="0 0 253 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <a href="http://localhost:4000">
+            <a href="http://0.0.0.0:4000">
             
                 <rect x="3" y="32" width="8" height="32" fill="#282828"/>
                 <path d="M0 0L3 0L3 32L0 32L0 0Z" fill="#282828"/>
@@ -73,7 +73,7 @@
             <ul>
                 <li>
                         <p>
-                            <a href="http://localhost:4000/about">
+                            <a href="/about">
                             About
                             </a>
                         </p>
@@ -81,7 +81,7 @@
                 </li>
                 <li>
                     <p>
-                    <a href="http://localhost:4000/work">
+                    <a href="/work">
                     
                             Work
                         
@@ -121,40 +121,38 @@
 
 
 </body>
-<footer class="mt-48 border-t-1 pt-4">
-<div class="grid grid-cols-2 gap-9 mb-32">
-    <div class="grid grid-cols-1">
-         <p>
+<footer class="grid grid-cols-1 mb-12 border-t-1 mt-48 pt-4 md:grid-cols-2 md:gap-9">
+    <div class="grid grid-cols-1 mb-4">
+        <p>
             © 2026 Danny Pagano
         </p>
     </div>
-    <div class="grid grid-cols-2">
+    <div class="grid grid-cols-1 gap-4 md:grid-cols-3">
         <div class="grid grid-cols-1">
-        <ul>
-            <li>
-                <a href="http://localhost:4000/about">
-                    <p>
-                        About
-                    </p>
-                </a>
-            </li>
-            <li>
-                <a href="http://localhost:4000/work">
-                    <p>
-                        Work
-                    </p>
-                </a>
-            </li>
-        </ul>
+            <ul>
+                <li>
+                    <a href="/about">
+                        <p>
+                            About
+                        </p>
+                    </a>
+                </li>
+                <li>
+                    <a href="/work">
+                        <p>
+                            Work
+                        </p>
+                    </a>
+                </li>
+            </ul>
         </div>
-        <div class="grid grid-cols-1 justify-items-end">
+        <div class="col-span-2">
             <a href="#top">
                 <p>
                     Back to top ↑
                 </p>
             </a>
-        </div>  
-        </div>
-</div>
+        </div>       
+    </div>
 </footer>
 </html>
