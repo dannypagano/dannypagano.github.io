@@ -2,3 +2,6 @@
 _site
 .github
 .jekyll-cache
+.LOCAL_DEV.md
+.vscode
+node_modules

@@ -6,35 +6,34 @@ categories: ["All", "Brand", "Web", "Print", "Media"]
 <div>
     <div class="my-8 border-t-1 pt-4 grid grid-cols-2">
         <div class="grid grid-cols-1">
-            <h2 class="font-medium col-span-1">All work</h2>
+            <h1 class="font-medium col-span-1">All work</h1>
         </div>
-        <!--- 
-        <div class="flex gap-1 justify-end">
-                {% for category in page.categories %}
-                <a href="#"><label class="px-2 py-1 bg-stone-300 text-stone-600 align-middle rounded-sm">{{ category }}</label></a>
-                {% endfor %}
-            </div>
-        --->
     </div>
 </div>
-    </div>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 mb-8">
-            {% for work in site.work %}
-            <div class="transition-opacity duration-50 hover:opacity-80 mb-6">
-                <a href="{{ site.url }}{{ work.url }}">
-                {% assign images = site.static_files | where: "image", true | where_exp: "file", "file.path contains work.slug" %}
-                {% assign image = images | first %}
-                <img height:325 width:100% class="border-1 mb-4" src="{{ site.url }}/{{ site.image_url }}/{{ work.slug }}/{{ work.slug }}{{ image.extname }}" alt="{{ work.title }}">
-                 </a>
-                <h3 class="mb-2">
-                    {{ work.title }}
-                </h3>
-                <p>
-                    {{ work.description | truncate: 120 }}
-                </p>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 mb-8">
+    {% for work in site.work %}
+    <div class="transition-opacity duration-50 hover:opacity-80 mb-6">
+        <div class="mb-4">
+        <a href="{{ work.url | relative_url }}">
+            {% assign folder = "/assets/images/originals/" | append: work.slug | append: "/" %}
+            {% assign candidate_images = site.static_files | where_exp: "file", "file.path contains folder" %}
+            {% assign logo_images = candidate_images | where_exp: "file", "file.path contains '/logos/'" %}
+            {% assign work_images = candidate_images | difference: logo_images %}
+            {% assign work_images = work_images | where_exp: "file", "file.extname == '.jpg' or file.extname == '.jpeg' or file.extname == '.png' or file.extname == '.webp'" %}
+            {% assign image = work_images | first %}
 
-            </div>
-            {% endfor %}
+            {% if image %}
+              {% assign path = image.path | remove_first: "/" %}
+              {% responsive_image_block %}
+                path: "{{ path }}"
+                alt: "{{ work.title }}"
+                title: "{{ work.title }}"
+              {% endresponsive_image_block %}
+            {% endif %}
+        </a>
         </div>
+        <h2 class="mb-2">{{ work.title }}</h2>
+        <p>{{ work.description | truncate: 120 }}</p>
     </div>
+    {% endfor %}
 </div>

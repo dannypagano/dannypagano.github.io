@@ -1,42 +1,31 @@
 ---
 layout: default
-title: {{ work.title }}
 ---
-
-<!----
-{% assign work = site.work | where: "title", page.title | first %}
-{% assign image = work.images | first %}
-{% assign images = site.static_files | where: "image", true %}
-{% assign image = images | first %}
-<div>
-    <img src="{{ site.url }}/{{ site.image_url }}/{{ work.slug }}{{ image.extname }}" alt="{{ work.title }} hero image" class="w-full mb-8 border-1"/>
-</div>
----->
-{% assign images = site.static_files | where: "image", true | where_exp: "file", "file.path contains work.slug" %}
-{% assign image = images | first %}
-
-{% if work.credit == true %}
+{% if page.credit == true %}
 <div class="mb-8">
-    <p class="font-medium">All photos by <a href="{{ work.credit-url }}">Julius Schlosburg</a></p>
+    <p class="font-medium">All photos by <a href="{{ page.credit-url }}">Julius Schlosburg</a></p>
 </div>
-{% for image in images %}
-<div>
-    <div class="grid grid-cols-1">
-
-        <img src="{{ site.url }}/{{ site.image_url }}/{{ work.slug }}/{{ image.name }}"  class="w-full border-1 mb-9">
-
-    </div>
-</div>
-{% endfor %}
-{% else %}
-{% assign images = site.static_files | where: "image", true | where_exp: "file", "file.path contains work.slug" %}
-{% assign image = images | first %}
-{% for image in images %}
-<div>
-    <div class="grid grid-cols-1">
-        <img src="{{ site.url }}/{{ site.image_url }}/{{ work.slug }}/{{ image.name }}"  class="w-full border-1 mb-9">
-    </div>
-</div>
-{% endfor %}
 {% endif %}
 
+<div>
+    <div class="grid grid-cols-1">
+        <h1 class="font-medium mb-6">{{ page.title }}</h1>
+
+        {% assign folder = "/assets/images/originals/" | append: page.slug | append: "/" %}
+        {% assign candidate_images = site.static_files | where_exp: "file", "file.path contains folder" %}
+        {% assign logo_images = candidate_images | where_exp: "file", "file.path contains '/logos/'" %}
+        {% assign work_images = candidate_images | difference: logo_images %}
+        {% assign work_images = work_images | where_exp: "file", "file.extname == '.jpg' or file.extname == '.jpeg' or file.extname == '.png' or file.extname == '.webp'" %}
+
+        {% for image in work_images %}
+          {% assign path = image.path | remove_first: "/" %}
+          <div class="w-full border-1 mb-9">
+            {% responsive_image_block %}
+              path: "{{ path }}"
+              alt: "{{ page.title }}"
+              title: "{{ page.title }}"
+            {% endresponsive_image_block %}
+          </div>
+        {% endfor %}
+    </div>
+</div>
