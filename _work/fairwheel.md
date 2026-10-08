@@ -1,0 +1,7 @@
+---
+title: Fairwheel Bikes
+description: Product photography for an internationally recognized retailer of bespoke bikes and hard to find components.
+image: fairwheel.jpg
+date: 2013-01-01
+categories: ["Photo"]
+---

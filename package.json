@@ -1,6 +1,15 @@
 {
+  "private": true,
   "dependencies": {
     "@tailwindcss/cli": "^4.1.17",
     "tailwindcss": "^4.1.17"
+  },
+  "devDependencies": {
+    "concurrently": "^9.2.1"
+  },
+  "scripts": {
+    "css": "tailwindcss -i ./assets/css/main.css -o ./assets/css/output.css --minify",
+    "css:watch": "tailwindcss -i ./assets/css/main.css -o ./assets/css/output.css --watch=always",
+    "dev": "concurrently --kill-others --names css,jekyll \"yarn css:watch\" \"bundle exec jekyll serve\""
   }
 }

@@ -1,0 +1,15 @@
+{% for category in categories %}               
+    {% if category == "Brand" %}
+            <p class="p-1 self-center bg-lime-300 rounded-sm text-[10px] leading-none text-lime-950">{{ category }}</p>
+    {% elsif category == "Web" %}
+            <p class="p-1 self-center bg-blue-300 rounded-sm text-[10px] leading-none text-blue-950">{{ category }}</p>
+    {% elsif category == "Photo" %}
+            <p class="p-1 self-center bg-red-300 rounded-sm text-[10px] leading-none text-red-950">{{ category }}</p>
+    {% elsif category == "Print" %}
+            <p class="p-1 self-center bg-amber-300 rounded-sm text-[10px] leading-none text-amber-950">{{ category }}</p>
+    {% elsif category == "Naming" %}
+            <p class="p-1 self-center bg-orange-300 rounded-sm text-[10px] leading-none text-orange-950">{{ category }}</p>
+    {% elsif category == "Strategy" %}
+            <p class="p-1 self-center bg-purple-300 rounded-sm text-[10px] leading-none text-purple-950">{{ category }}</p>
+    {% endif %}
+{% endfor %}

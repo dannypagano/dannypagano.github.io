@@ -9,7 +9,7 @@ source "https://rubygems.org"
 gem "jekyll", "~> 4.2.0"
 #
 group :jekyll_plugins do
-  gem "jekyll-responsive-image", "~> 1.0", git: "https://github.com/dannypagano/jekyll-responsive-image"
+  gem "jekyll-responsive-image", "~> 1.6", git: "https://github.com/wildlyinaccurate/jekyll-responsive-image"
 end
 #  gem "jekyll-feed", "~> 0.12"
 #end

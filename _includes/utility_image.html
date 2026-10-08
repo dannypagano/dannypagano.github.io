@@ -1,0 +1,14 @@
+{% assign img = include.file %}
+{% assign img_loading = include.loading | default: "lazy" %}
+{% if img and img.path %}
+  {% if img.extname == '.svg' %}
+    <img src="{{ img.path | relative_url }}" alt="{{ include.alt }}" class="block w-full h-auto" loading="{{ img_loading }}">
+  {% else %}
+{% responsive_image_block %}
+path: "{{ img.path | remove_first: '/' }}"
+alt: "{{ include.alt }}"
+title: "{{ include.alt }}"
+loading: "{{ img_loading }}"
+{% endresponsive_image_block %}
+  {% endif %}
+{% endif %}

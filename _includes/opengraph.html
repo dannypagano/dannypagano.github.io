@@ -14,10 +14,10 @@
   content="{{ page.date | date_to_xmlschema }}"
   property="article:published_time"
 />
-{% endif %} {% if page.image %} {% assign image = page.image[0] %} {% assign
-width = 1300 %}
+{% endif %} 
+{% if page.image %} {% assign image = page.image %}
 <meta
-  content="https://dannypagano.com{{ site.image_url }}/{{ width }}w/{{ image.src }}"
+  content="https://dannypagano.com/{{ page.image }}/1936w/"
   property="og:image"
 />
 {% else %}

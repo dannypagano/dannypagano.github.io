@@ -1,0 +1,36 @@
+{% assign patterns = "1,2,1,1|1,2,2|1,2,1,2|1,3,1,1" | split: "|" %}
+{% if page.layout_pattern %}
+  {% assign pattern = page.layout_pattern | split: "," %}
+{% else %}
+  {% assign pick = page.slug | size | modulo: patterns.size %}
+  {% assign pattern = patterns[pick] | split: "," %}
+{% endif %}
+
+{% assign offset = 0 %}
+{% assign total = work_images.size %}
+{% for step in (1..total) %}
+  {% if offset >= total %}{% break %}{% endif %}
+
+  {% assign p = forloop.index0 | modulo: pattern.size %}
+  {% assign n = pattern[p] | plus: 0 %}
+  {% assign remaining = total | minus: offset %}
+  {% if n > remaining %}{% assign n = remaining %}{% endif %}
+
+  {% case n %}
+    {% when 1 %}{% assign grid = "grid-cols-1" %}
+    {% when 2 %}{% assign grid = "grid-cols-1 md:grid-cols-2" %}
+    {% else %}{% assign grid = "grid-cols-1 md:grid-cols-2 lg:grid-cols-3" %}
+  {% endcase %}
+
+  {% if offset == 0 %}{% assign group_loading = "eager" %}{% else %}{% assign group_loading = "lazy" %}{% endif %}
+
+  <div class="grid {{ grid }} gap-4 mb-4">
+    {% for image in work_images offset: offset limit: n %}
+      <div class="w-full border-1">
+        {% include utility_image.html file=image alt=page.title loading=group_loading %}
+      </div>
+    {% endfor %}
+  </div>
+
+  {% assign offset = offset | plus: n %}
+{% endfor %}

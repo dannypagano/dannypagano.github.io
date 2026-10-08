@@ -1,0 +1,18 @@
+{% assign related = "" | split: "" %}
+{% assign by_date = site.work | where_exp: "w", "w.parent == nil" | sort: 'date' | reverse %}
+
+{% for work in by_date %}
+  {% if work.url == page.url %}{% continue %}{% endif %}
+  {% assign shared = work.categories | where_exp: "c", "page.categories contains c" %}
+  {% if shared.size > 0 %}{% assign related = related | push: work %}{% endif %}
+  {% if related.size == 3 %}{% break %}{% endif %}
+{% endfor %}
+
+{% if related.size > 0 %}
+  <h2 class="flex items-center mt-4 mb-8 gap-4 after:flex-1 after:h-0.5 after:bg-neutral-800">Related work</h2>
+  <div class="grid grid-cols-1 gap-4 md:grid-cols-3">
+    {% for work in related %}
+      {% include work_card.html %}
+    {% endfor %}
+  </div>
+{% endif %}

@@ -1,0 +1,21 @@
+{% if include.index and include.index <= include.eager_count %}{% assign card_loading = "eager" %}{% else %}{% assign card_loading = "lazy" %}{% endif %}
+<div class="mb-4">
+    <div class="w-full border-1 mb-4 hover:opacity-80 transition-opacity duration-100">
+        <a href="{{ work.url | relative_url }}">
+            {% assign image_folder = work.image_folder | default: work.slug %}
+            {% include work_images.html slug=image_folder %}
+            {% assign cover = work_images | first %}
+            {% include utility_image.html file=cover alt=work.title loading=card_loading %}
+        </a>
+    </div>
+    <div class="flex flex-row flex-end items-center place-content-between mb-2">
+        <h3 class="leading-none">{{ work.title }}</h3>
+        <div class="flex flex-row flex-wrap flex-end gap-1">
+            {% if work.categories %}
+                {% assign categories = work.categories %}
+                {% include work_categories.html %}
+            {% endif %}
+        </div>
+    </div>
+    <p class="text-neutral-500">{{ work.description | truncate: 120 }}</p>
+</div>

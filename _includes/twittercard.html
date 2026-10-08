@@ -23,3 +23,33 @@ width = 1300 %}
   content="https://dannypagano.com/images/opengraph.png"
 />
 {% endif %}
+
+<meta content="{{ site.title }}" property="og:site_name" />
+{% if page.title %}
+<meta content="{{ page.title }}" property="og:title" />
+{% else %}
+<meta content="{{ site.title }}" property="og:title" />
+{% endif %} {% if page.description %}
+<meta content="{{ page.description }}" property="og:description" />
+{% else %}
+<meta content="{{ site.description }}" property="og:description" />
+{% endif %} {% if page.url %}
+<meta content="{{ site.url }}{{ page.url }}" property="og:url" />
+{% endif %} {% if page.date %}
+<meta
+  content="{{ page.date | date_to_xmlschema }}"
+  property="article:published_time"
+/>
+{% endif %} 
+{% if page.image %} {% assign image = page.image %}
+<meta
+  name= "twitter:image:src"
+  content="https://dannypagano.com/{{ page.image }}/1936w/"
+  property="og:image"
+/>
+{% else %}
+<meta
+  name="twitter:image:src"
+  content="https://dannypagano.com/images/opengraph.png"
+/>
+{% endif %}

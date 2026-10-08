@@ -2,114 +2,70 @@
 layout: default
 title: Home
 ---
-<div class="mb-24">
-    <div class="my-8 border-t-1 pt-4">
-        <h1 class="font-medium mb-8">Selected Work</h1>
-        <div class="grid gap-4 mb-8 md:gap-9 grid-cols-1 md:grid-cols-2">
-        {% assign sorted = site.work %}
-        {% for work in sorted limit:4 %}
-            <div class="transition-opacity duration-50">
-                <a href="{{ work.url | relative_url }}">
-                    <div class="border-1 mb-4 transition-opacity duration-500 hover:opacity-80">
-                    {% assign folder = "/assets/images/originals/" | append: work.slug | append: "/" %}
-                    {% assign candidate_images = site.static_files | where_exp: "file", "file.path contains folder" %}
-                    {% assign logo_images = candidate_images | where_exp: "file", "file.path contains '/logos/'" %}
-                    {% assign work_images = candidate_images | difference: logo_images %}
-                    {% assign work_images = work_images | where_exp: "file", "file.extname == '.jpg' or file.extname == '.jpeg' or file.extname == '.png' or file.extname == '.webp'" %}
-                    {% assign image = work_images | first %}
+<!-- index.htm -->
 
-                    {% if image %}
-                        {% assign path = image.path | remove_first: "/" %}
-                        {% responsive_image_block %}
-                        path: "{{ path }}"
-                        alt: "{{ work.title }}"
-                        title: "{{ work.title }}"
-                        {% endresponsive_image_block %}
-                    {% endif %}
-                    </div>
-                </a>
-                <h2 class="mb-2">{{ work.title }}</h2>
-                <p class="mb-4">{{ work.description | truncate: 120 }}</p>
-            </div>
+    <div>
+        <h1 class="flex items-center mb-8 gap-4 after:flex-1 after:h-0.5 after:bg-neutral-800">Selected Work</h1>
+        <div class="grid gap-4 mb-8 md:gap-8 grid-cols-1 md:grid-cols-2">
+        {% assign sorted = site.work | where_exp: "w", "w.parent == nil" | sort: 'date' | reverse %}
+        {% for work in sorted %}
+        {% include work_card.html index=forloop.index eager_count=2 %}
         {% endfor %}
         </div>
-    </div>
+     </div>
 </div>
-<div>
-    <div class="border-t-1 pt-4">
-        <h2 class="font-medium mb-4">Experience</h2>
+<div class="mb-24">
+    <div>
+        <h2 class="flex items-center mt-4 mb-8 gap-4 after:flex-1 after:h-0.5 after:bg-neutral-800">Experience</h2>
     </div>    
-    <div class="grid grid-cols-1 pb-2 border-t border-0.5 pt-2 md:grid-cols-2 pt-4 mb-2 md:gap-9">
-        <div class="grid grid-cols-1">
-            <h3 class="mb-4 md:mb-1">Freelance</h3>
-        </div>
-        <div class="grid grid-cols-2 md:my-2">
-            <div class="grid grid-cols-1">
+    <div class="grid mb-4 border-t border-0.5 pt-2 md:grid-cols-2 md:gap-8">
+        <h3 class="self-start flex items-center gap-4 mb-2">Freelance</h3>
+        <div>
+            <div class="flex justify-between items-center  gap-4 mb-2">
                 <h4>Designer</h4>
-            </div>
-            <div class="grid grid-cols-1">
-                <p>2014 - Present</p>
+                <p class="text-neutral-500 text-sm font-mono">2014 - Present</p>
             </div>
         </div>
     </div>
-    <div class="grid grid-cols-1 pb-2 border-t border-0.5 pt-2 md:grid-cols-2 pt-4 mb-2 md:gap-9">
-        <div class="grid grid-cols-1">
-            <h3 class="mb-4 md:mb-1">
-                <a href="https://tailscale.com" target="_blank">Tailscale ↗</a></h3>
-        </div>
-        <div class="grid grid-cols-1">
-            <div class="grid grid-cols-2 my-2">
-                <div class="grid grid-cols-1">
-                    <h4>Senior Brand Designer</h4>
-                </div>
-                <div class="grid grid-cols-1">
-                <p>2024 - 2026</p>
-                </div>
-            </div> 
-            <div class="grid grid-cols-2">
-                <div class="grid grid-cols-1 my-2">
-                    <h4>Brand Designer</h4>
-                </div>
-                <div class="grid grid-cols-1">
-                    <p>2022 - 2024</p>
-                </div>
-            </div>  
+    <div class="grid mb-4 border-t border-0.5 pt-2 md:grid-cols-2 md:gap-8">
+        <h3 class="self-start flex items-center gap-4 mb-2 ">
+            <a href="https://tailscale.com" target="_blank">Tailscale ↗</a>
+        </h3>
+        <div>
+            <div class="flex justify-between items-center gap-4 mb-1">
+                <h4>Senior Brand Designer</h4>
+                <p class="text-neutral-500 text-sm font-mono">2024 - 2026</p>
+            </div>
+            <div class="flex justify-between items-center gap-4 mb-1">
+                <h4>Brand Designer</h4>
+                <p class="text-neutral-500 text-sm font-mono">2022 - 2024</p>
+            </div>
         </div>
     </div>
-    <div class="grid grid-cols-1 pb-2 border-t border-0.5 pt-2 md:grid-cols-2 pt-4 mb-2 md:gap-9">
-        <div class="grid grid-cols-1">
-            <h3 class="mb-4 md:mb-1">
-                <a href="https://godatdesign.com" target="_blank">Godat Design ↗</a>
-            </h3>
-        </div>
-            <div class="grid grid-rows-2">
-                <div class="grid grid-cols-2 my-2 md:my-2">
-                    <div class="grid grid-cols-1">
-                        <h4>Partner</h4>
-                    </div>
-                    <div class="grid grid-cols-1">
-                        <p>2019 - 2022</p>
-                    </div>
-                </div>
-                <div class="grid grid-cols-2 my-2 md:my-2">
-                    <div class="grid grid-cols-1">
-                        <h4>Senior Designer</h4>
-                    </div>
-                    <div class="grid grid-cols-1">
-                        <p>2016 - 2019</p>
-                    </div>
-                </div>
-                <div class="grid grid-cols-2 my-2">
-                    <div class="grid grid-cols-1">
-                        <h4>Designer</h4>
-                    </div>
-                    <div class="grid grid-cols-1">
-                        <p>2014 - 2016</p>
-                    </div>
-                </div>
+    <div class="grid mb-4 border-t border-0.5 pt-2 md:grid-cols-2 md:gap-8">
+        <h3 class="self-start flex items-center gap-4 mb-2">
+            <a href="https://godatdesign.com" target="_blank">Godat Design ↗</a>
+        </h3>
+        <div>
+            <div class="flex justify-between items-center mb-1">
+                <h4>Partner</h4>
+                <p class="text-neutral-500 text-sm font-mono">2019 - 2022</p>
             </div>
-    </div>  
-</div>
+            <div class="flex justify-between items-center mb-1">
+                <h4>Senior Designer</h4>
+                <p class="text-neutral-500 text-sm font-mono">2016 - 2019</p>
+            </div>
+            <div class="flex justify-between items-center mb-1">
+                <h4>Designer</h4>
+                <p class="text-neutral-500 text-sm font-mono">2014 - 2016</p>
+            </div>
+        </div>
+    </div>
+
+
+
+
+  
 
 
 
