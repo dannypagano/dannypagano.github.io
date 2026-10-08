@@ -1,34 +1,75 @@
-<footer class="grid grid-cols-1 mb-12 border-t-1 mt-48 pt-4 md:grid-cols-2 md:gap-9">
-    <div class="grid grid-cols-1 mb-4">
-        <p>
-            © {{ site.time | date: "%Y" }} Danny Pagano
-        </p>
-    </div>
-    <div class="grid grid-cols-1 gap-4 md:grid-cols-3">
-        <div class="grid grid-cols-1">
-            <ul>
+<!-- <footer class="flex flex-col flex-1 mb-12 border-t-1 mt-12 pt-4 gap-8 md:flex-row ">
+    <div class="flex flex-1 gap-4 mb-4">
+             <p class="text-neutral-500 text-xs flex flex-1">
+                Last updated <a href="https://github.com/dannypagano/dannypagano.github.io/commits/main" target="_blank"><span class="text-neutral-200 before:ml-1">{{ site.data.build.last_updated | date: "%B %-d, %Y" }} ↗</span></a>
+            </p>
+            <p class="text-neutral-500 text-xs flex flex-1 justify-self-end">
+                © {{ site.time | date: "%Y" }} Danny Pagano
+            </p>
+    </div>  
+    <div class="flex flex-row flex-1 gap-4">
+        <div class="flex flex-1">
+            <ul class="text-neutral-200">
+                 <li>
+                    <a href="/work" class="">
+                            All work
+                    </a>
+                </li>
                 <li>
-                    <a href="/about">
-                        <p>
+                    <a href="/about" class="">
                             About
-                        </p>
                     </a>
                 </li>
                 <li>
-                    <a href="/work">
-                        <p>
-                            Work
-                        </p>
+                    <a href="https://dannypagano.com/more" target="_blank" class="">
+                            More ↗
                     </a>
                 </li>
+               
             </ul>
         </div>
-        <div class="col-span-2">
+        <div class="flex flex-1 justify-self-end">
             <a href="#top">
-                <p>
-                    Back to top ↑
-                </p>
+                <p class="text-neutral-200 ">Back to top ↑</p>
             </a>
         </div>       
     </div>
+</footer> -->
+<footer class="mt-12 border-t-1 pt-4">
+        <div class="flex flex-1 flex-col-reverse gap-4 md:gap-8 md:flex-row">
+            <div class="flex flex-row flex-1 gap-4 text-xs">
+                <div class="flex flex-1">
+                    <p class="text-neutral-500">Last updated <a href="https://github.com/dannypagano/dannypagano.github.io/commits/main" target="_blank"><span class="text-neutral-400 before:ml-1">{{ site.data.build.last_updated | date: "%B %-d, %Y" }} ↗</span></a></p>
+                </div>
+                <div class="flex flex-1 flex-row-reverse">
+                    <p class="text-neutral-500">© {{ site.time | date: "%Y" }} Danny Pagano</p>
+                </div>
+            </div>
+            <div class="flex flex-row flex-1 gap-4">
+                <div class="flex flex-1">
+                    <ul>
+                 <li>
+                    <a href="/work" class="">
+                            All work
+                    </a>
+                </li>
+                <li>
+                    <a href="/about" class="">
+                            About
+                    </a>
+                </li>
+                 <li>
+                    <a href="/colophon" class="">
+                            Colophon
+                    </a>
+                </li>
+            </ul>
+                </div>
+                <div class="flex flex-1 flex-row-reverse">
+                    <a href="#top">
+                        <p class="text-neutral-200">Back to top ↑</p>
+                    </a>
+                </div>
+            </div>
+        </div>
 </footer>

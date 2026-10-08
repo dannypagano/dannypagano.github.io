@@ -1,11 +1,29 @@
-{% assign smallest = resized | sort: 'width' | last %}
-{% capture srcset %}{% for i in resized %}/{{ i.path }} {{ i.width }}w{% unless forloop.last %}, {% endunless %}{% endfor %}{% endcapture %}
+{% assign loading = loading | default: "lazy" %}
+{% if resized %}
+  {% assign placeholder = resized | where: "width", 32 | first %}
+  {% assign sorted = resized | where_exp: "i", "i.width > 32" | sort: "width" %}
+{% endif %}
 
-<img
-  src="/{{ smallest.path }}"
-  srcset="{{ srcset }}"
-  sizes="(max-width: 968px) 100vw, 968px"
-  alt="{{ alt }}"
-  {% if title %}title="{{ title }}"{% endif %}
-  loading="lazy"
-/>
+<div class="relative overflow-hidden">
+  {% if placeholder %}
+    <div aria-hidden="true"
+         class="absolute inset-0 bg-cover bg-center blur-lg scale-110"
+         style="background-image: url('/{{ placeholder.path }}')"></div>
+  {% endif %}
+  <img
+    {% if sorted and sorted.size > 0 %}
+      src="/{{ sorted.first.path }}"
+      srcset="{% for i in sorted %}/{{ i.path }} {{ i.width }}w{% unless forloop.last %}, {% endunless %}{% endfor %}"
+      sizes="auto, {{ sizes | default: '(min-width: 1024px) 968px, 100vw' }}"
+    {% else %}
+      src="/{{ path }}"
+    {% endif %}
+    {% if original %}width="{{ original.width }}" height="{{ original.height }}"{% endif %}
+    alt="{{ alt }}"
+    {% if title %}title="{{ title }}"{% endif %}
+    loading="{{ loading }}"
+    {% if loading == "eager" %}fetchpriority="high"{% endif %}
+    class="relative block w-full h-auto opacity-0 transition-opacity duration-500 motion-reduce:transition-none"
+    onload="this.classList.remove('opacity-0')"
+  />
+</div>

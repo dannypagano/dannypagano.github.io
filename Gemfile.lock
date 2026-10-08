@@ -1,11 +1,10 @@
 GIT
-  remote: https://github.com/dannypagano/jekyll-responsive-image
-  revision: c920442d314cf3ce2e3560be4c592e4997391667
+  remote: https://github.com/wildlyinaccurate/jekyll-responsive-image
+  revision: dda6d748c8b070b37900d9e0b528d11701808f76
   specs:
     jekyll-responsive-image (1.6.0)
-      image_magick
       jekyll (>= 2.0, < 5.0)
-      rmagick (>= 2.0, < 7.0)
+      rmagick (>= 2.0, < 5.0)
 
 GEM
   remote: https://rubygems.org/
@@ -24,7 +23,6 @@ GEM
     http_parser.rb (0.8.0)
     i18n (1.14.7)
       concurrent-ruby (~> 1.0)
-    image_magick (0.1.9)
     jekyll (4.2.2)
       addressable (~> 2.4)
       colorator (~> 1.0)
@@ -78,7 +76,7 @@ PLATFORMS
 DEPENDENCIES
   http_parser.rb (~> 0.6.0)
   jekyll (~> 4.2.0)
-  jekyll-responsive-image (~> 1.0)!
+  jekyll-responsive-image (~> 1.6)!
   rmagick (~> 4.0)
   tzinfo (>= 1, < 3)
   tzinfo-data

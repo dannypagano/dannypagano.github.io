@@ -28,9 +28,14 @@ url: "https://dannypagano.com" # the base hostname & protocol for your site, e.g
 twitter_username: dannypagano
 github_username: dannypagano
 image_url: assets/images
+color: "white"
+
 
 # Build settings
-#plugins:
+
+plugins:
+  - jekyll-responsive-image
+  
 responsive_image:
   # [Required]
   # Path to the image template.
@@ -66,7 +71,7 @@ responsive_image:
   # [Optional, Default: assets]
   # The base directory where assets are stored. This is used to determine the
   # `dirname` value in `output_path_format` below.
-  base_path: assets/images/originals/%{work.slug}/%{filename}
+  base_path: assets/images/originals/
 
   # [Optional, Default: assets/resized/%{filename}-%{width}x%{height}.%{extension}]
   # The template used when generating filenames for resized images. Must be a
@@ -80,7 +85,9 @@ responsive_image:
   #   %{width}       Width of the resized image
   #   %{height}      Height of the resized image
   #
-  output_path_format: assets/images/resized/%{filename}-%{width}x%{height}.%{extension}
+
+  # Moved width in front of the filename, since images are loaded in alpha order on the project pages, and the width was overriding the number suffix
+  output_path_format: assets/images/resized/%{width}/%{width}w-%{filename}.%{extension}
 
   # [Optional, Default: true]
   # Whether or not to save the generated assets into the source folder.
@@ -101,7 +108,7 @@ responsive_image:
 collections:
   work:
     output: true
-    permalink: /work/:name
+    permalink: /work/:path
 
 # Defaults
 defaults:
@@ -115,10 +122,5 @@ defaults:
      path: "_work"
     values:
      layout: "work"
-     categories: ["All", "Brand", "Web", "Print", "Media"]
-  - 
-    scope:
-     path: "assets/images/originals/{%work.name%}/"
-    values:
-     image: true
+     
 

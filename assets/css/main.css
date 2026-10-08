@@ -1,24 +1,21 @@
 @import "tailwindcss";
 
 @theme {
-  --font-sans: "general-grotesque";
-  --font-mono: "general-grotesque-mono";
+  --font-sans: "general-grotesque", "Helvetica Neue", Arial, sans-serif;
+  --font-mono: "general-grotesque-mono", "Courier New", Courier, monospace;
   --ease-fluid: cubic-bezier(0.3, 0, 0, 1);
   --ease-snappy: cubic-bezier(0.2, 0, 0, 1);
-
+  --color-text: var(--color-neutral-500);
+  --color-heading: var(--color-neutral-200);
+  --color-link-nav: var(--color-neutral-50);
+  --color-link-text: var(--color-neutral-400);
+  --color-background: var(--color-neutral-950);
+  --color-border: var(--color-neutral-800);
 }
 
 @font-face {
 font-family: "general-grotesque";
-   src: url(" ../fonts/GeneralGrotesque-Book.woff2") format("woff2-variations"),
-     url("../fonts/GeneralGrotesque-Book.woff")format("woff");
-    font-weight: 500;
-    font-style: normal;
-    font-display: swap;
-}
-@font-face {
-font-family: "general-grotesque";
-  src: url("../fonts/GeneralGrotesque-Regular.woff2") format("woff2-variations"),
+  src: url("../fonts/GeneralGrotesque-Regular.woff2") format("woff2"),
     url("../fonts/GeneralGrotesque-Regular.woff") format("woff");
   font-weight: 400;
   font-style: normal;
@@ -28,7 +25,7 @@ font-family: "general-grotesque";
 
 @font-face {
 font-family: "general-grotesque-mono";
-  src: url("../fonts/GeneralGrotesqueMono-Regular.woff2") format("woff2-variations"),
+  src: url("../fonts/GeneralGrotesqueMono-Regular.woff2") format("woff2"),
     url("../fonts/GeneralGrotesqueMono-Regular.woff") format("woff");
   font-weight: 400;
   font-style: normal;
@@ -36,30 +33,51 @@ font-family: "general-grotesque-mono";
   font-feature-settings: "ss01" 1;
 }
 
-html {
-  color: #282828;
-}
-body
-{
- text-rendering: geometricPrecision;
- -webkit-font-smoothing: antialiased;
- -moz-osx-font-smoothing: grayscale;
- background-color: #eeebea;
-}
+@layer base {
+  html {
+    text-rendering: geometricPrecision;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: var(--color-background);
+    scrollbar-gutter: stable;
+  }
 
-div,
-footer,
-img {
-   border-color: rgba(40,40,40,.1);
-}
+  *, ::before, ::after {
+    border-color: var(--color-border);
+  }
 
-p {
-  color: rgba(40,40,40,.65);
-}
+  h1, h2, h3, h4, h5, h6 {
+    color: var(--color-heading);
+    font-family: var(--font-sans);
+  }
 
-p a:hover {
-  opacity:0.8;
-}
+  p {
+    color: var(--color-text);
+  }
 
-@media (prefers-color-scheme: dark) {
+  ul {
+    color: var(--color-text);
+  }
+
+  a:hover {
+    color: var(--color-link-nav);
+    text-decoration: underline;
+  }
+
+  p a {
+    color: var(--color-link-text);
+    text-decoration: underline;
+  }
+
+   li a {
+    color: var(--color-link-text);
+    text-decoration: underline;
+  }
+
+  nav,
+  footer,
+  li a {
+    color: var(--color-link-nav);
+    text-decoration: none;
+  }
 }

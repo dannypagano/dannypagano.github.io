@@ -1,5 +1,5 @@
-# Sample workflow for building and deploying a Jekyll site to GitHub Pages
-name: Deploy Jekyll with GitHub Pages dependencies preinstalled
+# Build and deploy the Jekyll site to GitHub Pages
+name: Deploy Jekyll site to GitHub Pages
 
 on:
   # Runs on pushes targeting the default branch
@@ -37,16 +37,29 @@ jobs:
       - name: Setup Ruby
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: 3.2
+          ruby-version: "3.2"
           bundler-cache: true
           cache-version: 0
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: lts/*
+          cache: yarn
+      - name: Install Node dependencies
+        run: yarn install --frozen-lockfile
+      - name: Build CSS
+        run: yarn css
       - name: Setup Pages
         uses: actions/configure-pages@v5
+      - name: Record last commit date
+        run: |
+          mkdir -p _data
+          echo "last_updated: \"$(git log -1 --format=%cI)\"" > _data/build.yml
       - name: Build with Jekyll
         run: bundle exec jekyll build --destination ./_site
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
-        
+
   # Deployment job
   deploy:
     environment:

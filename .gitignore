@@ -1,6 +1,7 @@
-.DS_store
+.DS_Store
 _site
 .jekyll-cache
 local_dev.md
 .vscode
 node_modules
+assets/css/output.css

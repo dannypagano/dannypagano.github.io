@@ -1,0 +1,11 @@
+{% assign folder = "/assets/images/originals/" | append: include.slug | append: "/" %}
+{% assign work_images = "" | split: "" %}
+{% for file in site.static_files %}
+  {% assign file_folder = file.path | remove: file.name %}
+  {% unless file_folder == folder %}{% continue %}{% endunless %}
+  {% assign ext = file.extname | downcase %}
+  {% case ext %}
+    {% when '.jpg', '.jpeg', '.png', '.webp', '.svg' %}
+      {% assign work_images = work_images | push: file %}
+  {% endcase %}
+{% endfor %}

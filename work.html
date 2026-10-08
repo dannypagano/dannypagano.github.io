@@ -1,39 +1,14 @@
 ---
 layout: default
-title: Work
-categories: ["All", "Brand", "Web", "Print", "Media"]
+title: All work
 ---
+<!-- /work.html -->
 <div>
-    <div class="my-8 border-t-1 pt-4 grid grid-cols-2">
-        <div class="grid grid-cols-1">
-            <h1 class="font-medium col-span-1">All work</h1>
-        </div>
-    </div>
+    <h1 class="flex items-center mb-8 gap-4 after:flex-1 after:h-0.5 after:bg-neutral-800">All Work</h1>
 </div>
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 mb-8">
-    {% for work in site.work %}
-    <div class="transition-opacity duration-50 hover:opacity-80 mb-6">
-        <div class="mb-4">
-        <a href="{{ work.url | relative_url }}">
-            {% assign folder = "/assets/images/originals/" | append: work.slug | append: "/" %}
-            {% assign candidate_images = site.static_files | where_exp: "file", "file.path contains folder" %}
-            {% assign logo_images = candidate_images | where_exp: "file", "file.path contains '/logos/'" %}
-            {% assign work_images = candidate_images | difference: logo_images %}
-            {% assign work_images = work_images | where_exp: "file", "file.extname == '.jpg' or file.extname == '.jpeg' or file.extname == '.png' or file.extname == '.webp'" %}
-            {% assign image = work_images | first %}
-
-            {% if image %}
-              {% assign path = image.path | remove_first: "/" %}
-              {% responsive_image_block %}
-                path: "{{ path }}"
-                alt: "{{ work.title }}"
-                title: "{{ work.title }}"
-              {% endresponsive_image_block %}
-            {% endif %}
-        </a>
-        </div>
-        <h2 class="mb-2">{{ work.title }}</h2>
-        <p>{{ work.description | truncate: 120 }}</p>
-    </div>
+<div class="grid grid-cols-1 md:grid-cols-2 md:gap-8 lg:grid-cols-3 lg:gap-4">
+    {% assign sorted = site.work | where_exp: "w", "w.parent == nil" | sort: 'date' | reverse %}
+    {% for work in sorted %}
+    {% include work_card.html index=forloop.index eager_count=3 %}
     {% endfor %}
 </div>

@@ -1,31 +1,43 @@
 ---
 layout: default
 ---
-{% if page.credit == true %}
-<div class="mb-8">
-    <p class="font-medium">All photos by <a href="{{ page.credit-url }}">Julius Schlosburg</a></p>
-</div>
-{% endif %}
-
-<div>
-    <div class="grid grid-cols-1">
-        <h1 class="font-medium mb-6">{{ page.title }}</h1>
-
-        {% assign folder = "/assets/images/originals/" | append: page.slug | append: "/" %}
-        {% assign candidate_images = site.static_files | where_exp: "file", "file.path contains folder" %}
-        {% assign logo_images = candidate_images | where_exp: "file", "file.path contains '/logos/'" %}
-        {% assign work_images = candidate_images | difference: logo_images %}
-        {% assign work_images = work_images | where_exp: "file", "file.extname == '.jpg' or file.extname == '.jpeg' or file.extname == '.png' or file.extname == '.webp'" %}
-
-        {% for image in work_images %}
-          {% assign path = image.path | remove_first: "/" %}
-          <div class="w-full border-1 mb-9">
-            {% responsive_image_block %}
-              path: "{{ path }}"
-              alt: "{{ page.title }}"
-              title: "{{ page.title }}"
-            {% endresponsive_image_block %}
+<!-- _layouts/work.html -->
+<div class="flex flex-col gap-12">
+  <div class="flex flex-col">
+    <section aria-label="Title and Overview" class="flex flex-col">
+        <div class="flex flex-row mb-4 gap-4">
+          <div class="flex flex-1 items-center h-[24px] gap-4 after:flex-1 after:h-0.5 after:bg-neutral-800">
+            <div>
+              <h4 class="text-xs text-neutral-500"><a href="{{ site.url }}/work/" class="">Work</a> / {% if page.parent %}<a href="{{ site.url }}/work/{{ page.parent }}"><span class="">{{ page.parent | capitalize }}</span></a> / {% endif %}{{ page.title }}</h1>
+            </div>
           </div>
-        {% endfor %}
+          {% assign categories = page.categories %}
+          {% if page.categories.size != 0 %}
+            <div class="flex flex-row flex-wrap flex-end gap-1">
+              {% include work_categories.html %}
+            </div>
+          {% endif %}
+        </div>
+        <div>
+          {% include work_header.html %}
+        </div>
+    </section>
+    <section aria-label="Project Images" class="flex flex-col mb-12">
+      {% assign image_folder = page.image_folder | default: page.slug %}
+      {% include work_images.html slug=image_folder %}
+      {% include work_pattern.html %}
+    </section>
+    {% if page.deliverables or page.roles %}
+      <div class="flex flex-col mb-12">
+        <section aria-label="Roles and Deliverables">
+          {% include work_roles_deliverables.html %}
+        </section>
+      </div>
+    {% endif %}
+    <div class="flex flex-col">
+      <section aria-label="Related Work">
+        {% include work_related.html %}
+      </section>
     </div>
+  </div>
 </div>
