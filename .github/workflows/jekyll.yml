@@ -46,7 +46,7 @@ jobs:
           node-version: lts/*
           cache: yarn
       - name: Install Node dependencies
-        run: yarn install --frozen-lockfile
+        run: yarn install 
       - name: Build CSS
         run: yarn css
       - name: Setup Pages
