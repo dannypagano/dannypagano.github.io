@@ -10,6 +10,8 @@
   "scripts": {
     "css": "tailwindcss -i ./assets/css/main.css -o ./assets/css/output.css --minify",
     "css:watch": "tailwindcss -i ./assets/css/main.css -o ./assets/css/output.css --watch=always",
-    "dev": "concurrently --kill-others --names css,jekyll \"yarn css:watch\" \"bundle exec jekyll serve\""
+    "predev": "yarn stop",
+    "dev": "concurrently --kill-others --names css,jekyll \"yarn css:watch\" \"bundle exec jekyll serve\"",
+    "stop": "pkill -f '[t]ailwindcss -i ./assets/css/main.css'; lsof -ti tcp:4000 -sTCP:LISTEN | xargs kill 2>/dev/null; true"
   }
 }
